@@ -1,21 +1,7 @@
-BẢN V16 - HIỆU ỨNG TUYẾT TRẮNG RƠI Ở TRANG ĐẦU
+BẢN V17
 
-1. Thêm file mới:
-   src/components/SnowfallEffect.js
+Chỉ cần thay 1 file:
+src/i18n.js
 
-2. Thay file:
-   src/components/InvitationHero.js
-
-3. Mở:
-   src/styles/global.css
-
-   và dán toàn bộ nội dung file:
-   src/styles/v16-snowfall.css
-
-   xuống CUỐI file global.css.
-
-Kết quả:
-- Tuyết trắng rơi nhẹ trên ảnh đầu trang.
-- Tuyết nằm trên ảnh nền/lớp phủ nhưng dưới phần chữ, nên không che tiêu đề.
-- Hiệu ứng chỉ có ở hero đầu trang, không rơi xuống các section phía dưới.
-- Trên điện thoại tự giảm một nửa số hạt tuyết để giữ hiệu năng.
+Đã đổi các chỗ xưng "Thương" thành "Thủy Thương" trong cả tiếng Việt và tiếng Anh,
+đồng thời giữ nguyên họ tên đầy đủ "Hoàng Ngọc Thủy Thương".

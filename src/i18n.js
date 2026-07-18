@@ -10,15 +10,15 @@ export const translations = {
     },
     countdown: {
       eyebrow: "ĐẾM NGƯỢC",
-      title: "Hẹn gặp bạn tại ngày đặc biệt của Thương",
+      title: "Hẹn gặp bạn tại ngày đặc biệt của Thủy Thương",
       units: ["Ngày", "Giờ", "Phút", "Giây"],
     },
     message: {
       title: "Một cột mốc đáng nhớ",
       lead:
-        "Sau một hành trình học tập với nhiều kỷ niệm, Thương rất vui được chia sẻ khoảnh khắc tốt nghiệp cùng gia đình, bạn bè và những người thân yêu.",
+        "Sau một hành trình học tập với nhiều kỷ niệm, Thủy Thương rất vui được chia sẻ khoảnh khắc tốt nghiệp cùng gia đình, bạn bè và những người thân yêu.",
       body:
-        "Sự hiện diện của bạn sẽ làm cho ngày đặc biệt này trở nên trọn vẹn và ý nghĩa hơn. Thương rất mong được gặp bạn tại buổi lễ.",
+        "Sự hiện diện của bạn sẽ làm cho ngày đặc biệt này trở nên trọn vẹn và ý nghĩa hơn. Thủy Thương rất mong được gặp bạn tại buổi lễ.",
     },
     event: {
       eyebrow: "THÔNG TIN BUỔI LỄ",
@@ -33,7 +33,7 @@ export const translations = {
       contactHeading: "Khi đến nơi, bạn vui lòng liên hệ để được hướng dẫn:",
       contacts: [
         {
-          name: "Thuỷ Thương",
+          name: "Thủy Thương",
           phone: "0707 250 103",
         },
         {
@@ -89,7 +89,7 @@ export const translations = {
       eyebrow: "LỜI CẢM ƠN",
       title: "Cảm ơn bạn đã là một phần trong hành trình này",
       lead:
-        "Thương rất mong được gặp bạn và cùng lưu lại những kỷ niệm thật đẹp trong ngày tốt nghiệp.",
+        "Thủy Thương rất mong được gặp bạn và cùng lưu lại những kỷ niệm thật đẹp trong ngày tốt nghiệp.",
     },
     footer: {
       line1: "Hoàng Ngọc Thủy Thương · Lễ Tốt Nghiệp 2026",
@@ -113,15 +113,15 @@ export const translations = {
     },
     countdown: {
       eyebrow: "COUNTDOWN",
-      title: "See you on Thương's special day",
+      title: "See you on Thủy Thương's special day",
       units: ["Days", "Hours", "Minutes", "Seconds"],
     },
     message: {
       title: "A milestone worth celebrating",
       lead:
-        "After a meaningful academic journey filled with memories, Thương is delighted to share this graduation moment with family, friends, and loved ones.",
+        "After a meaningful academic journey filled with memories, Thủy Thương is delighted to share this graduation moment with family, friends, and loved ones.",
       body:
-        "Your presence will make this special day even more meaningful and complete. Thương sincerely hopes to celebrate this moment with you.",
+        "Your presence will make this special day even more meaningful and complete. Thủy Thương sincerely hopes to celebrate this moment with you.",
     },
     event: {
       eyebrow: "CEREMONY INFORMATION",
@@ -136,7 +136,7 @@ export const translations = {
       contactHeading: "When you arrive, please contact us for assistance:",
       contacts: [
         {
-          name: "Thuỷ Thương",
+          name: "Thủy Thương",
           phone: "0707 250 103",
         },
         {
@@ -192,7 +192,7 @@ export const translations = {
       eyebrow: "THANK YOU",
       title: "Thank you for being part of this journey",
       lead:
-        "Thương looks forward to seeing you and creating beautiful memories together on graduation day.",
+        "Thủy Thương looks forward to seeing you and creating beautiful memories together on graduation day.",
     },
     footer: {
       line1: "Hoàng Ngọc Thủy Thương · Graduation 2026",
