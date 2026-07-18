@@ -1,22 +1,19 @@
-BẢN V25 - SỬA ĐÚNG NHƯ ẢNH BẠN YÊU CẦU
+BẢN V27 - KHUNG GỬI XE CAO BẰNG BẢN ĐỒ
 
-1. THAY file:
-   src/components/EventDetails.js
+Không thay đổi nội dung hay component.
 
-2. Mở:
+Chỉ cần:
+1. Mở file:
    src/styles/global.css
 
-   và dán toàn bộ nội dung file:
-   src/styles/v25-event-equal-cards.css
+2. Dán toàn bộ nội dung file:
+   src/styles/v27-location-equal-height.css
 
-   xuống CUỐI file global.css.
+   xuống CUỐI global.css.
 
-KẾT QUẢ:
-- Khung trái và khung phải dùng chính xác cùng màu nền.
-- Hai khung có cùng chiều cao và cùng kích thước.
-- Nút "Thêm vào Google Calendar" nằm hoàn toàn bên trong khung trái.
-- Cột phải giữ nguyên hai số điện thoại.
-- Desktop: 2 cột cạnh nhau.
-- Mobile: tự xếp dọc.
-
-V25 dùng class riêng hoàn toàn để CSS cũ không kéo nút Calendar ra ngoài nữa.
+Kết quả trên desktop:
+- Bản đồ và khung "MỘT SỐ ĐỊA ĐIỂM GỬI XE LÂN CẬN" có cùng chiều cao chính xác.
+- Giữ nguyên toàn bộ 6 địa điểm gửi xe.
+- Khoảng cách giữa các mục được thu gọn nhẹ để bố cục cân đối.
+- Nếu màn hình quá nhỏ và nội dung vượt chiều cao, khung gửi xe có thể cuộn bên trong.
+- Trên tablet/mobile, bố cục trở lại chiều cao tự động để dễ đọc.

@@ -1,0 +1,73 @@
+/* =========================================================
+   V27 - KHUNG GỬI XE CAO BẰNG ĐÚNG CHIỀU CAO BẢN ĐỒ
+   Giữ nguyên toàn bộ nội dung.
+   ========================================================= */
+
+/* Dùng chung một chiều cao cho map và khung gửi xe */
+.location-section {
+  --location-panel-height: 500px;
+}
+
+/* Bản đồ */
+.location-section .map-card {
+  height: var(--location-panel-height) !important;
+}
+
+.location-section .map-frame {
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+}
+
+/* Khung "MỘT SỐ ĐỊA ĐIỂM GỬI XE LÂN CẬN" */
+.location-section .parking-column {
+  height: var(--location-panel-height) !important;
+  min-height: var(--location-panel-height) !important;
+  max-height: var(--location-panel-height) !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+
+  padding: 28px 30px !important;
+  overflow-y: auto !important;
+}
+
+/* Giữ nội dung gọn để 6 địa điểm hiển thị đẹp trong cùng chiều cao */
+.location-section .parking-column h3 {
+  margin-bottom: 20px !important;
+}
+
+.location-section .parking-list {
+  margin: 0 !important;
+}
+
+.location-section .parking-item {
+  margin-bottom: 13px !important;
+}
+
+.location-section .parking-item:last-child {
+  margin-bottom: 0 !important;
+}
+
+.location-section .parking-item strong {
+  margin-bottom: 2px !important;
+  line-height: 1.4 !important;
+}
+
+.location-section .parking-item span {
+  line-height: 1.45 !important;
+}
+
+/* Mobile: bỏ chiều cao cố định để nội dung không bị chật */
+@media (max-width: 900px) {
+  .location-section .map-card {
+    height: 420px !important;
+  }
+
+  .location-section .parking-column {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow-y: visible !important;
+  }
+}
