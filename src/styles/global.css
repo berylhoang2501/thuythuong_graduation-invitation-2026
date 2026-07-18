@@ -65,7 +65,6 @@ a {
   letter-spacing: 0.03em;
 }
 
-/* Làm "THIỆP MỜI" nổi bật hơn */
 .hero__eyebrow {
   display: inline-block;
   margin: 0 auto 18px;
@@ -101,18 +100,15 @@ a {
   text-align: center;
 }
 
-/* Đếm ngược: nền navy */
 .section--navy {
   background: #071a36;
   color: #fff;
 }
 
-/* Thông tin buổi lễ / lời cảm ơn */
 .section--cream {
   background: #eee5d5;
 }
 
-/* Kỷ niệm tốt nghiệp: nền sáng riêng biệt để không dính với Đếm ngược */
 .section--gallery {
   background: #f7f2e9;
   color: #14213d;
@@ -229,25 +225,118 @@ h2 {
   letter-spacing: 0.08em;
 }
 
+/* =========================
+   SECTION ĐỊA ĐIỂM - V8
+   ========================= */
+
 .location-section {
   background: #faf8f4;
 }
 
+.location-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.18fr) minmax(320px, 0.82fr);
+  gap: 42px;
+  align-items: start;
+  margin-top: 34px;
+  text-align: left;
+}
+
+.venue-column h2 {
+  margin: 0 0 10px;
+  text-align: left;
+}
+
+.venue-address {
+  margin: 0 0 24px;
+  color: rgba(20, 33, 61, 0.82);
+  font-size: 1.08rem;
+}
+
 .map-card {
-  width: min(1100px, 100%);
-  margin: 38px auto 8px;
+  width: 100%;
   overflow: hidden;
-  border: 1px solid rgba(20, 33, 61, 0.13);
-  border-radius: 24px;
+  border: 1px solid rgba(20, 33, 61, 0.12);
+  border-radius: 22px;
   background: #e8e3da;
-  box-shadow: 0 20px 55px rgba(20, 33, 61, 0.08);
+  box-shadow: 0 18px 45px rgba(20, 33, 61, 0.09);
 }
 
 .map-frame {
   display: block;
   width: 100%;
-  height: 520px;
+  height: 500px;
   border: 0;
+}
+
+.parking-column {
+  padding: 28px 30px;
+  border: 1px solid rgba(20, 33, 61, 0.11);
+  border-radius: 22px;
+  background: #f0e8d9;
+  box-shadow: 0 18px 45px rgba(20, 33, 61, 0.06);
+}
+
+.parking-column h3 {
+  margin: 0 0 24px;
+  color: #14213d;
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  letter-spacing: 0.08em;
+}
+
+.parking-list {
+  margin: 0;
+  padding-left: 1.35rem;
+}
+
+.parking-item {
+  margin: 0 0 18px;
+  padding-left: 4px;
+}
+
+.parking-item:last-child {
+  margin-bottom: 0;
+}
+
+.parking-item::marker {
+  color: #9b6b17;
+  font-size: 1.05em;
+}
+
+.parking-item a {
+  display: inline;
+  color: #14213d;
+  text-decoration: none;
+}
+
+.parking-item strong,
+.parking-item span {
+  display: block;
+}
+
+.parking-item strong {
+  margin-bottom: 3px;
+  font-family: Arial, sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.parking-item span {
+  color: rgba(20, 33, 61, 0.76);
+  font-size: 0.96rem;
+  line-height: 1.55;
+}
+
+.parking-item a:hover strong,
+.parking-item a:hover span {
+  color: #9b6b17;
+}
+
+.parking-item a:hover strong {
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .gallery {
@@ -327,6 +416,16 @@ h2 {
   margin: 4px;
 }
 
+@media (max-width: 900px) {
+  .location-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .parking-column {
+    padding: 24px;
+  }
+}
+
 @media (max-width: 650px) {
   .section {
     padding: 68px 18px;
@@ -352,7 +451,19 @@ h2 {
   }
 
   .map-frame {
-    height: 420px;
+    height: 390px;
+  }
+
+  .venue-column h2 {
+    text-align: center;
+  }
+
+  .venue-address {
+    text-align: center;
+  }
+
+  .parking-column h3 {
+    text-align: center;
   }
 
   .gallery__item img {
