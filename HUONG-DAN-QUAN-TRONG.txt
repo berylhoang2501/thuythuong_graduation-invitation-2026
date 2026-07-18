@@ -1,0 +1,34 @@
+BẢN SỬA V2 - KHÔNG IMPORT ẢNH .JPG TRỰC TIẾP TRONG JAVASCRIPT
+
+Lỗi build hiện tại có 2 nhóm:
+1. Thiếu component Footer hoặc sai đường dẫn component.
+2. Các file ảnh .JPG bị Webpack đọc như JavaScript, dẫn đến "Unexpected character '�' (1:0)".
+
+CÁCH LÀM:
+
+A. Upload toàn bộ các file trong ZIP này, giữ đúng cấu trúc thư mục.
+   Các file src/* sẽ thay thế source hiện tại.
+
+B. 5 ảnh KHÔNG để trong src/images nữa.
+   Hãy tạo:
+     static/images/
+
+   Và upload 5 ảnh vào:
+     static/images/IMG_6021.JPG
+     static/images/IMG_6022.JPG
+     static/images/IMG_6023.JPG
+     static/images/IMG_6026.JPG
+     static/images/IMG_6028.JPG
+
+   Code mới dùng withPrefix() để đọc ảnh từ static/images, nên không còn lỗi Webpack parse ảnh.
+
+C. Có thể xóa thư mục src/images sau khi ảnh đã có đủ trong static/images.
+
+D. Xóa package-lock.json cũ nếu còn.
+
+E. Commit vào main. GitHub Actions tự chạy lại.
+
+LƯU Ý:
+- Không cần đổi tên ảnh.
+- Không cần import ảnh trong JS.
+- File Footer.js đã được bổ sung đầy đủ.

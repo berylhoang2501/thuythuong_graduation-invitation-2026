@@ -1,30 +1,23 @@
-import React from 'react';
-import photo1 from '../images/IMG_6021.JPG';
-import photo2 from '../images/IMG_6022.JPG';
-import photo3 from '../images/IMG_6023.JPG';
-import photo4 from '../images/IMG_6028.JPG';
+import React from "react";
+import { withPrefix } from "gatsby";
 
 const photos = [
-  { src: photo1, alt: 'Ảnh tốt nghiệp của Hoàng Ngọc Thủy Thương 1' },
-  { src: photo2, alt: 'Ảnh tốt nghiệp của Hoàng Ngọc Thủy Thương 2' },
-  { src: photo3, alt: 'Ảnh tốt nghiệp của Hoàng Ngọc Thủy Thương 3' },
-  { src: photo4, alt: 'Ảnh tốt nghiệp của Hoàng Ngọc Thủy Thương 4' },
+  ["IMG_6021.JPG", "Khoảnh khắc tốt nghiệp 1"],
+  ["IMG_6022.JPG", "Khoảnh khắc tốt nghiệp 2"],
+  ["IMG_6023.JPG", "Khoảnh khắc tốt nghiệp 3"],
+  ["IMG_6028.JPG", "Khoảnh khắc tốt nghiệp 4"],
 ];
 
 export default function GallerySection() {
   return (
-    <section className="section section-cream graduation-gallery">
-      <div className="container center">
-        <p className="eyebrow dark">Graduation memories</p>
-        <h2 className="section-title">Khoảnh khắc tốt nghiệp</h2>
-        <p className="lead narrow">
-          Một cột mốc đáng nhớ trên hành trình trưởng thành, và sẽ càng ý nghĩa hơn khi có bạn cùng chia sẻ ngày đặc biệt này.
-        </p>
-
-        <div className="gallery-grid">
-          {photos.map((photo, index) => (
-            <figure className={`gallery-item gallery-item-${index + 1}`} key={photo.src}>
-              <img src={photo.src} alt={photo.alt} loading="lazy" />
+    <section className="section section--navy">
+      <div className="container">
+        <p className="eyebrow eyebrow--gold">GRADUATION MEMORIES</p>
+        <h2>Khoảnh khắc tốt nghiệp</h2>
+        <div className="gallery">
+          {photos.map(([file, alt]) => (
+            <figure className="gallery__item" key={file}>
+              <img src={withPrefix(`/images/${file}`)} alt={alt} loading="lazy" />
             </figure>
           ))}
         </div>
