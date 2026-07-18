@@ -1,0 +1,152 @@
+/* =========================================================
+   V24 - ÉP SECTION THÔNG TIN BUỔI LỄ THÀNH 2 CỘT RÕ RÀNG
+   Dùng class riêng để không bị CSS cũ ghi đè.
+   ========================================================= */
+
+.event-info-grid-v24 {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 28px !important;
+  align-items: stretch !important;
+  width: min(1100px, 100%) !important;
+  margin: 38px auto 0 !important;
+}
+
+.event-info-card-v24 {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+
+  min-width: 0 !important;
+  min-height: 470px !important;
+  padding: 42px 36px !important;
+
+  border: 1px solid rgba(20, 33, 61, 0.15) !important;
+  border-radius: 24px !important;
+
+  background: rgba(255, 255, 255, 0.62) !important;
+  color: #14213d !important;
+
+  text-align: center !important;
+  box-shadow: none !important;
+}
+
+.event-info-icon-v24 {
+  margin: 0 0 24px !important;
+  font-size: 2rem !important;
+  line-height: 1 !important;
+}
+
+.event-info-icon-v24--gold {
+  color: #9b6b17 !important;
+}
+
+.event-info-heading-v24 {
+  margin: 0 0 26px !important;
+  font-family: Arial, sans-serif !important;
+  font-size: 1.15rem !important;
+  font-weight: 800 !important;
+  line-height: 1.4 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+}
+
+.event-info-time-v24 {
+  margin: 0 0 18px !important;
+  font-size: 1.2rem !important;
+}
+
+.event-info-date-v24 {
+  margin: 0 !important;
+  font-size: 1.08rem !important;
+  line-height: 1.6 !important;
+}
+
+.event-calendar-v24 {
+  margin-top: auto !important;
+  align-self: center !important;
+}
+
+.event-contact-card-v24 {
+  justify-content: flex-start !important;
+}
+
+.event-contact-heading-v24 {
+  margin: 0 0 26px !important;
+
+  font-family: Arial, sans-serif !important;
+  font-size: 1.12rem !important;
+  font-weight: 800 !important;
+  line-height: 1.6 !important;
+
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+  text-align: center !important;
+}
+
+.event-contact-list-v24 {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 16px !important;
+
+  width: 100% !important;
+  margin-top: auto !important;
+}
+
+.event-contact-item-v24 {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+
+  width: 100% !important;
+  min-height: 76px !important;
+  padding: 16px 18px !important;
+
+  border: 1px solid rgba(20, 33, 61, 0.1) !important;
+  border-radius: 16px !important;
+
+  background: rgba(255, 255, 255, 0.82) !important;
+  color: #14213d !important;
+
+  font-family: Arial, sans-serif !important;
+  font-size: 1rem !important;
+  line-height: 1.45 !important;
+
+  text-align: left !important;
+  text-decoration: none !important;
+}
+
+.event-contact-item-v24:hover {
+  border-color: rgba(155, 107, 23, 0.45) !important;
+  box-shadow: 0 10px 26px rgba(20, 33, 61, 0.08) !important;
+  transform: translateY(-2px) !important;
+}
+
+.event-contact-phone-v24 {
+  flex: 0 0 auto !important;
+  font-size: 1.2rem !important;
+}
+
+.event-contact-text-v24 {
+  display: block !important;
+  min-width: 0 !important;
+}
+
+/* Tablet / mobile: tự xếp dọc */
+@media (max-width: 800px) {
+  .event-info-grid-v24 {
+    grid-template-columns: 1fr !important;
+  }
+
+  .event-info-card-v24 {
+    min-height: auto !important;
+  }
+
+  .event-calendar-v24 {
+    margin-top: 28px !important;
+  }
+
+  .event-contact-list-v24 {
+    margin-top: 0 !important;
+  }
+}

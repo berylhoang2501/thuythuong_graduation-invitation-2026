@@ -10,7 +10,9 @@ export default function EventDetails() {
     encodeURIComponent(t.event.calendarTitle) +
     "&dates=20260730T033000Z/20260730T050000Z" +
     "&location=" +
-    encodeURIComponent("Nhà hát Hòa Bình, 240 Đường 3 tháng 2, Phường Hòa Hưng, TP.HCM") +
+    encodeURIComponent(
+      "Nhà hát Hòa Bình, 240 Đường 3 tháng 2, Phường Hòa Hưng, TP.HCM"
+    ) +
     "&details=" +
     encodeURIComponent(t.event.calendarDetails);
 
@@ -20,19 +22,27 @@ export default function EventDetails() {
         <p className="eyebrow">{t.event.eyebrow}</p>
         <h2>{t.event.title}</h2>
 
-        <div className="event-equal-grid">
-          {/* Cột trái: thời gian + Google Calendar trong cùng khung */}
-          <article className="event-equal-card">
-            <div className="event-equal-card__icon" aria-hidden="true">◷</div>
+        <div className="event-info-grid-v24">
+          {/* CỘT TRÁI */}
+          <article className="event-info-card-v24">
+            <div className="event-info-icon-v24" aria-hidden="true">
+              ◷
+            </div>
 
-            <h3>{t.event.timeHeading}</h3>
-            <p className="event-time">
+            <h3 className="event-info-heading-v24">
+              {t.event.timeHeading}
+            </h3>
+
+            <p className="event-info-time-v24">
               <strong>{t.event.time}</strong>
             </p>
-            <p className="event-date">{t.event.date}</p>
+
+            <p className="event-info-date-v24">
+              {t.event.date}
+            </p>
 
             <a
-              className="button event-calendar-button"
+              className="button event-calendar-v24"
               href={calendarUrl}
               target="_blank"
               rel="noreferrer"
@@ -41,25 +51,28 @@ export default function EventDetails() {
             </a>
           </article>
 
-          {/* Cột phải: thông tin liên hệ */}
-          <article className="event-equal-card">
-            <div className="event-equal-card__icon event-equal-card__icon--gold" aria-hidden="true">
+          {/* CỘT PHẢI */}
+          <article className="event-info-card-v24 event-contact-card-v24">
+            <div className="event-info-icon-v24 event-info-icon-v24--gold" aria-hidden="true">
               ☎
             </div>
 
-            <h3 className="event-contact-heading">
+            <h3 className="event-contact-heading-v24">
               {t.event.contactHeading}
             </h3>
 
-            <div className="event-contact-list">
+            <div className="event-contact-list-v24">
               {t.event.contacts.map((contact) => (
                 <a
-                  className="event-contact-item"
+                  className="event-contact-item-v24"
                   href={`tel:${contact.phone.replace(/\s/g, "")}`}
                   key={contact.phone}
                 >
-                  <span className="event-contact-phone-icon" aria-hidden="true">📞</span>
-                  <span>
+                  <span className="event-contact-phone-v24" aria-hidden="true">
+                    📞
+                  </span>
+
+                  <span className="event-contact-text-v24">
                     <strong>{contact.name}:</strong> {contact.phone}
                   </span>
                 </a>

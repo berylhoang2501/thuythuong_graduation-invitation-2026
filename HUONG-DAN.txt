@@ -1,27 +1,30 @@
-BẢN V23 - XÓA TOÀN BỘ NHẠC, TRỞ VỀ NHƯ CŨ
+BẢN V24 - SỬA TRIỆT ĐỂ SECTION THÔNG TIN BUỔI LỄ THÀNH 2 CỘT
 
 1. THAY file:
-   src/pages/index.js
+   src/components/EventDetails.js
 
-File này đã xóa hoàn toàn:
-- import BackgroundMusic
-- <BackgroundMusic />
-
-2. XÓA file nếu đang có:
-   src/components/BackgroundMusic.js
-
-3. Để chắc chắn không còn nút/iframe nhạc cũ, mở:
+2. Mở:
    src/styles/global.css
 
-   và dán toàn bộ nội dung file:
-   src/styles/v23-remove-music.css
+   Dán toàn bộ nội dung file:
+   src/styles/v24-event-two-columns.css
 
    xuống CUỐI file global.css.
 
-Sau đó commit vào main và chờ GitHub Actions build xong.
-Cuối cùng hard refresh:
-Mac: Cmd + Shift + R
-Windows: Ctrl + Shift + R
+KẾT QUẢ:
+- Cột trái:
+  + THỜI GIAN
+  + 10:30 - 12:00
+  + Thứ Năm, ngày 30/07/2026
+  + Thêm vào Google Calendar
 
-Các phần khác như tuyết, ngôn ngữ, cá nhân hóa tên khách, thông tin buổi lễ,
-địa điểm, countdown và gallery vẫn giữ nguyên.
+- Cột phải:
+  Khi đến nơi, bạn vui lòng liên hệ để được hướng dẫn:
+  📞 Thủy Thương: 0707 250 103
+  📞 Vy: 0794 334 309
+
+- Hai khung cùng màu, cùng chiều cao.
+- Desktop hiển thị cạnh nhau.
+- Mobile tự xếp dọc.
+
+V24 dùng class riêng có hậu tố -v24 và !important để CSS cũ không làm layout bị dính thành một hàng nữa.
