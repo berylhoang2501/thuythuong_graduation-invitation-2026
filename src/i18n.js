@@ -35,8 +35,34 @@ export const translations = {
       eyebrow: "ĐỊA ĐIỂM",
       title: "Nhà hát Hòa Bình",
       address: "240 Đường 3 tháng 2, Phường Hòa Hưng, TP.HCM",
-      mapButton: "Mở Google Maps",
-      mapTitle: "Bản đồ Nhà hát Hòa Bình",
+      clickHint: "Nhấn vào địa chỉ để mở Google Maps",
+      parkingTitle: "MỘT SỐ ĐỊA ĐIỂM GỬI XE LÂN CẬN",
+      parking: [
+        {
+          name: "PHÂN VIỆN HỌC VIỆN HÀNH CHÍNH QUỐC GIA",
+          address: "Số 10 đường 3/2, P. Hòa Hưng (cạnh KS Kỳ Hòa)",
+        },
+        {
+          name: "BÃI GIỮ XE VIỆT NAM QUỐC TỰ",
+          address: "242 đường 3/2, P. Hòa Hưng (có hầm giữ ô tô)",
+        },
+        {
+          name: "BÃI GIỮ XE CAFÉ ROSE",
+          address: "238 đường 3/2, P. Hòa Hưng",
+        },
+        {
+          name: "BÃI GIỮ XE 700 LÊ HỒNG PHONG",
+          address: "700 Lê Hồng Phong, P. Hòa Hưng",
+        },
+        {
+          name: "BÃI GIỮ XE 332 CAO THẮNG",
+          address: "332 Cao Thắng, P. Hòa Hưng",
+        },
+        {
+          name: "BÃI GIỮ XE 177B CAO THẮNG",
+          address: "177B Cao Thắng, P. Hòa Hưng",
+        },
+      ],
     },
     gallery: {
       eyebrow: "KỶ NIỆM TỐT NGHIỆP",
@@ -101,8 +127,34 @@ export const translations = {
       eyebrow: "VENUE",
       title: "Hòa Bình Theater",
       address: "240 3 Tháng 2 Street, Hòa Hưng Ward, Ho Chi Minh City",
-      mapButton: "Open in Google Maps",
-      mapTitle: "Map to Hòa Bình Theater",
+      clickHint: "Click an address to open Google Maps",
+      parkingTitle: "NEARBY PARKING OPTIONS",
+      parking: [
+        {
+          name: "NATIONAL ACADEMY OF PUBLIC ADMINISTRATION - SOUTHERN CAMPUS",
+          address: "10 3/2 Street, Hòa Hưng Ward (next to Kỳ Hòa Hotel)",
+        },
+        {
+          name: "VIỆT NAM QUỐC TỰ PARKING",
+          address: "242 3/2 Street, Hòa Hưng Ward (car basement available)",
+        },
+        {
+          name: "CAFÉ ROSE PARKING",
+          address: "238 3/2 Street, Hòa Hưng Ward",
+        },
+        {
+          name: "700 LÊ HỒNG PHONG PARKING",
+          address: "700 Lê Hồng Phong Street, Hòa Hưng Ward",
+        },
+        {
+          name: "332 CAO THẮNG PARKING",
+          address: "332 Cao Thắng Street, Hòa Hưng Ward",
+        },
+        {
+          name: "177B CAO THẮNG PARKING",
+          address: "177B Cao Thắng Street, Hòa Hưng Ward",
+        },
+      ],
     },
     gallery: {
       eyebrow: "GRADUATION MEMORIES",

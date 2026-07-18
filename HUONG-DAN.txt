@@ -1,10 +1,21 @@
-BẢN V6 - CHỈ CẦN THAY 2 FILE
+BẢN V7 - ĐỊA ĐIỂM + HƯỚNG DẪN GỬI XE
 
-1. src/components/GallerySection.js
-2. src/styles/global.css
+Thay 2 file:
+1. src/i18n.js
+2. src/components/LocationSection.js
+
+Sau đó mở:
+src/styles/global.css
+
+và DÁN TOÀN BỘ nội dung của file:
+src/styles/location-v7.css
+
+xuống CUỐI file global.css.
 
 Thay đổi:
-- "THIỆP MỜI" trên ảnh đầu trang được làm lớn hơn, sáng hơn, có nền navy trong suốt và viền vàng để nổi bật.
-- Section ĐẾM NGƯỢC giữ nền navy.
-- Section KỶ NIỆM TỐT NGHIỆP chuyển sang nền kem sáng riêng, tạo ranh giới rõ ràng giữa hai section.
-- Gallery vẫn hiển thị 4 ảnh như trước.
+- Bỏ hoàn toàn bản đồ nhúng khỏi website.
+- Địa chỉ Nhà hát Hòa Bình vẫn hiển thị bằng chữ.
+- URL Google Maps được ẩn bên trong đường link: rê chuột/click vào địa chỉ mới mở Google Maps.
+- Thêm mục "MỘT SỐ ĐỊA ĐIỂM GỬI XE LÂN CẬN".
+- Từng địa điểm gửi xe là một ô có thể click; URL Google Maps không hiển thị ra ngoài.
+- Có bản tiếng Anh tương ứng khi nhấn nút EN/VI.
