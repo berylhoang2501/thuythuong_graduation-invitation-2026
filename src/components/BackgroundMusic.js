@@ -15,34 +15,21 @@ function sendCommand(iframe, func, args = []) {
   );
 }
 
-function MusicIcon({ paused }) {
+function EqualizerIcon() {
   return (
-    <svg
-      className="music-toggle__svg"
-      viewBox="0 0 64 64"
-      aria-hidden="true"
-    >
-      <path
-        d="M25 43V18l24-5v25"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <ellipse cx="19" cy="45" rx="8" ry="6" fill="currentColor" />
-      <ellipse cx="43" cy="40" rx="8" ry="6" fill="currentColor" />
+    <span className="music-equalizer" aria-hidden="true">
+      <span className="music-equalizer__bar music-equalizer__bar--1" />
+      <span className="music-equalizer__bar music-equalizer__bar--2" />
+      <span className="music-equalizer__bar music-equalizer__bar--3" />
+    </span>
+  );
+}
 
-      {paused && (
-        <path
-          d="M10 10L54 54"
-          fill="none"
-          stroke="#e63946"
-          strokeWidth="6"
-          strokeLinecap="round"
-        />
-      )}
-    </svg>
+function MusicNoteIcon() {
+  return (
+    <span className="music-note-icon" aria-hidden="true">
+      🎵
+    </span>
   );
 }
 
@@ -50,8 +37,7 @@ export default function BackgroundMusic() {
   const iframeRef = useRef(null);
   const hasStartedRef = useRef(false);
 
-  const [paused, setPaused] = useState(false);
-  const [started, setStarted] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   const startMusic = () => {
     const iframe = iframeRef.current;
@@ -62,8 +48,7 @@ export default function BackgroundMusic() {
     sendCommand(iframe, "playVideo");
 
     hasStartedRef.current = true;
-    setStarted(true);
-    setPaused(false);
+    setIsPlaying(true);
   };
 
   const pauseMusic = () => {
@@ -71,27 +56,14 @@ export default function BackgroundMusic() {
     if (!iframe) return;
 
     sendCommand(iframe, "pauseVideo");
-    setPaused(true);
-  };
-
-  const resumeMusic = () => {
-    const iframe = iframeRef.current;
-    if (!iframe) return;
-
-    sendCommand(iframe, "unMute");
-    sendCommand(iframe, "playVideo");
-    setPaused(false);
+    setIsPlaying(false);
   };
 
   useEffect(() => {
-    // Nhạc chỉ bắt đầu sau tương tác đầu tiên với trang.
-    // Điều này phù hợp với chính sách autoplay của trình duyệt.
     const handleFirstInteraction = (event) => {
       const target = event.target;
 
-      // Nếu người dùng bấm thẳng nút nhạc thì để onClick của nút tự xử lý,
-      // tránh trường hợp vừa bật xong lại bị pause ngay.
-      if (target?.closest?.(".music-toggle")) return;
+      if (target?.closest?.(".music-player-button")) return;
 
       if (!hasStartedRef.current) {
         startMusic();
@@ -110,21 +82,21 @@ export default function BackgroundMusic() {
   }, []);
 
   const toggleMusic = () => {
-    if (!started) {
+    if (!hasStartedRef.current) {
       startMusic();
       return;
     }
 
-    if (paused) {
-      resumeMusic();
-    } else {
+    if (isPlaying) {
       pauseMusic();
+    } else {
+      startMusic();
     }
   };
 
   return (
     <>
-      {/* Player YouTube được giữ ẩn hoàn toàn khỏi giao diện */}
+      {/* YouTube player chỉ dùng làm nguồn nhạc, hoàn toàn ẩn khỏi giao diện */}
       <div className="youtube-audio-only-player" aria-hidden="true">
         <iframe
           ref={iframeRef}
@@ -138,27 +110,58 @@ export default function BackgroundMusic() {
         />
       </div>
 
-      <button
-        type="button"
-        className={`music-toggle${paused ? " music-toggle--paused" : ""}`}
-        onClick={toggleMusic}
-        aria-label={
-          !started
-            ? "Bật nhạc"
-            : paused
-              ? "Tiếp tục phát nhạc"
-              : "Tạm dừng nhạc"
-        }
-        title={
-          !started
-            ? "Bật nhạc"
-            : paused
-              ? "Tiếp tục phát nhạc"
-              : "Tạm dừng nhạc"
-        }
-      >
-        <MusicIcon paused={paused || !started} />
-      </button>
+      <div className="music-player-wrap">
+        {/* Vòng tiến trình trang trí giống mẫu tham khảo */}
+        <svg
+          className={`music-progress-ring${isPlaying ? " music-progress-ring--playing" : ""}`}
+          viewBox="0 0 64 64"
+          aria-hidden="true"
+        >
+          <defs>
+            <linearGradient id="musicGradientV22" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#06b6d4" />
+              <stop offset="50%" stopColor="#3b82f6" />
+              <stop offset="100%" stopColor="#8b5cf6" />
+            </linearGradient>
+          </defs>
+
+          <circle
+            cx="32"
+            cy="32"
+            r="28"
+            className="music-progress-ring__track"
+          />
+
+          <circle
+            cx="32"
+            cy="32"
+            r="28"
+            className="music-progress-ring__value"
+          />
+        </svg>
+
+        <button
+          type="button"
+          className={`music-player-button${isPlaying ? " music-player-button--playing" : ""}`}
+          onClick={toggleMusic}
+          aria-label={isPlaying ? "Tạm dừng nhạc" : "Phát nhạc"}
+          title={isPlaying ? "Tạm dừng nhạc" : "Phát nhạc"}
+        >
+          <span className="music-player-button__gradient" aria-hidden="true" />
+
+          <span className="music-player-button__content">
+            {isPlaying ? <EqualizerIcon /> : <MusicNoteIcon />}
+          </span>
+
+          <span className="music-player-button__ripple" aria-hidden="true" />
+        </button>
+
+        {isPlaying && (
+          <span className="music-playing-dot" aria-hidden="true">
+            <span />
+          </span>
+        )}
+      </div>
     </>
   );
 }

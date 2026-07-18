@@ -1,31 +1,32 @@
-BẢN V21 - NHẠC NỀN YOUTUBE KHÔNG HIỂN THỊ VIDEO
+BẢN V22 - NÚT NHẠC THEO MẪU music-player.tsx
 
-Ý đúng của bạn:
-- Không hiển thị video YouTube trên website.
-- Khi khách nhấn/chạm vào trang lần đầu tiên, nhạc bắt đầu phát.
-- Nút nhạc nằm phía trên nút EN/VI.
-- Nhấn nút để tạm dừng / phát tiếp.
+Mình tham khảo các đặc điểm chính của file mẫu:
+- nút tròn nền trắng;
+- vòng progress ring bên ngoài;
+- khi phát nhạc: 3 thanh equalizer chuyển động;
+- khi dừng: hiện biểu tượng 🎵;
+- nền gradient nhẹ;
+- chấm trạng thái nhỏ khi đang phát;
+- hiệu ứng hover, pulse và ripple.
+
+Bản này không dùng motion/react để tránh phải thêm dependency mới.
+Mọi animation được làm bằng CSS nên phù hợp project Gatsby hiện tại.
 
 CÁCH LÀM:
 
-1. Thay file:
+1. Thay:
    src/components/BackgroundMusic.js
 
 2. Mở:
    src/styles/global.css
 
-   Dán toàn bộ nội dung file:
-   src/styles/v21-audio-only-youtube.css
+   Dán toàn bộ nội dung:
+   src/styles/v22-music-player-button.css
 
    xuống CUỐI file global.css.
 
-3. Đảm bảo src/pages/index.js vẫn có:
-   import BackgroundMusic from "../components/BackgroundMusic";
-
-   và trong <main> có:
+3. Không cần sửa index.js nếu bạn đã có:
    <BackgroundMusic />
 
-LƯU Ý:
-Trình duyệt hiện đại thường không cho website tự phát nhạc có tiếng trước khi
-người dùng tương tác. Vì vậy bản này sẽ phát nhạc ngay ở lần click/chạm đầu tiên
-trên trang. Video YouTube vẫn hoàn toàn ẩn.
+Lưu ý:
+YouTube vẫn chỉ làm nguồn nhạc nền và không hiển thị video.

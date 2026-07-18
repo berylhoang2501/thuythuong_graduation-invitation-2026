@@ -1,0 +1,332 @@
+/* V22 - NÚT NHẠC THEO MẪU music-player.tsx */
+
+/* YouTube chỉ làm nguồn nhạc, không hiện video */
+.youtube-audio-only-player {
+  position: fixed !important;
+  left: -10000px !important;
+  top: -10000px !important;
+  width: 200px !important;
+  height: 200px !important;
+  overflow: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  z-index: -9999 !important;
+}
+
+.youtube-audio-only-player iframe {
+  width: 200px !important;
+  height: 200px !important;
+  border: 0 !important;
+}
+
+/* Cụm nút nhạc - nằm phía trên nút EN/VI */
+.music-player-wrap {
+  position: fixed;
+  left: 18px;
+  bottom: 92px;
+  z-index: 1200;
+  width: 58px;
+  height: 58px;
+}
+
+/* Progress ring */
+.music-progress-ring {
+  position: absolute;
+  inset: 0;
+  width: 58px;
+  height: 58px;
+  transform: rotate(-90deg);
+  pointer-events: none;
+}
+
+.music-progress-ring__track,
+.music-progress-ring__value {
+  fill: none;
+  stroke-width: 2;
+}
+
+.music-progress-ring__track {
+  stroke: rgba(255, 255, 255, 0.14);
+}
+
+.music-progress-ring__value {
+  stroke: url(#musicGradientV22);
+  stroke-linecap: round;
+  stroke-dasharray: 175.93;
+  stroke-dashoffset: 175.93;
+}
+
+.music-progress-ring--playing .music-progress-ring__value {
+  animation: music-ring-progress 18s linear infinite;
+}
+
+@keyframes music-ring-progress {
+  from {
+    stroke-dashoffset: 175.93;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Main circular button */
+.music-player-button {
+  position: absolute;
+  inset: 2px;
+  width: 54px;
+  height: 54px;
+  padding: 0;
+  overflow: hidden;
+
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.96);
+  color: #14213d;
+
+  box-shadow:
+    0 14px 34px rgba(20, 33, 61, 0.24),
+    0 0 0 1px rgba(255, 255, 255, 0.22) inset;
+
+  cursor: pointer;
+  backdrop-filter: blur(14px);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.25s ease;
+}
+
+.music-player-button:hover {
+  transform: scale(1.05);
+  box-shadow:
+    0 16px 38px rgba(20, 33, 61, 0.28),
+    0 0 24px rgba(34, 211, 238, 0.18);
+}
+
+.music-player-button:active {
+  transform: scale(0.95);
+}
+
+.music-player-button__gradient {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(236, 254, 255, 0.96),
+      rgba(239, 246, 255, 0.96),
+      rgba(250, 245, 255, 0.96)
+    );
+}
+
+.music-player-button--playing .music-player-button__gradient {
+  animation: music-gradient-breathe 4s ease-in-out infinite;
+}
+
+@keyframes music-gradient-breathe {
+  0%,
+  100% {
+    background:
+      linear-gradient(
+        45deg,
+        rgba(6, 182, 212, 0.13),
+        rgba(59, 130, 246, 0.13),
+        rgba(139, 92, 246, 0.13)
+      );
+  }
+
+  50% {
+    background:
+      linear-gradient(
+        225deg,
+        rgba(139, 92, 246, 0.16),
+        rgba(6, 182, 212, 0.16),
+        rgba(59, 130, 246, 0.16)
+      );
+  }
+}
+
+.music-player-button__content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.music-note-icon {
+  display: inline-block;
+  font-size: 1.55rem;
+  filter: drop-shadow(0 1px 1px rgba(20, 33, 61, 0.12));
+  animation: music-note-pulse 2s ease-in-out infinite;
+}
+
+@keyframes music-note-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.10);
+  }
+}
+
+/* Animated equalizer bars while playing */
+.music-equalizer {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  height: 18px;
+}
+
+.music-equalizer__bar {
+  display: block;
+  width: 4px;
+  border-radius: 999px;
+  transform-origin: center;
+}
+
+.music-equalizer__bar--1 {
+  height: 12px;
+  background: linear-gradient(to top, #06b6d4, #3b82f6);
+  animation: music-eq-1 1.2s ease-in-out infinite;
+}
+
+.music-equalizer__bar--2 {
+  height: 16px;
+  background: linear-gradient(to top, #3b82f6, #8b5cf6);
+  animation: music-eq-2 1.2s ease-in-out 0.15s infinite;
+}
+
+.music-equalizer__bar--3 {
+  height: 12px;
+  background: linear-gradient(to top, #8b5cf6, #06b6d4);
+  animation: music-eq-3 1.2s ease-in-out 0.3s infinite;
+}
+
+@keyframes music-eq-1 {
+  0%,
+  100% {
+    transform: scaleY(0.7);
+  }
+
+  50% {
+    transform: scaleY(1.45);
+  }
+}
+
+@keyframes music-eq-2 {
+  0%,
+  100% {
+    transform: scaleY(0.65);
+  }
+
+  50% {
+    transform: scaleY(1.3);
+  }
+}
+
+@keyframes music-eq-3 {
+  0%,
+  100% {
+    transform: scaleY(0.8);
+  }
+
+  50% {
+    transform: scaleY(1.55);
+  }
+}
+
+/* Ripple */
+.music-player-button__ripple {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(34, 211, 238, 0.22),
+      rgba(59, 130, 246, 0.22)
+    );
+  opacity: 0;
+  transform: scale(0);
+  pointer-events: none;
+}
+
+.music-player-button:active .music-player-button__ripple {
+  animation: music-ripple 0.45s ease-out;
+}
+
+@keyframes music-ripple {
+  0% {
+    opacity: 0.35;
+    transform: scale(0.2);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.8);
+  }
+}
+
+/* Small playing indicator */
+.music-playing-dot {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+
+  display: grid;
+  place-items: center;
+
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+
+  background: linear-gradient(135deg, #22d3ee, #3b82f6);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.35);
+}
+
+.music-playing-dot span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #fff;
+  animation: music-dot-pulse 1s ease-in-out infinite;
+}
+
+@keyframes music-dot-pulse {
+  0%,
+  100% {
+    transform: scale(0.8);
+    opacity: 0.85;
+  }
+
+  50% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 650px) {
+  .music-player-wrap {
+    left: 12px;
+    bottom: 80px;
+    width: 54px;
+    height: 54px;
+  }
+
+  .music-progress-ring {
+    width: 54px;
+    height: 54px;
+  }
+
+  .music-player-button {
+    width: 50px;
+    height: 50px;
+  }
+}
