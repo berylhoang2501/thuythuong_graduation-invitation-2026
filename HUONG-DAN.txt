@@ -1,4 +1,4 @@
-BẢN V24 - SỬA TRIỆT ĐỂ SECTION THÔNG TIN BUỔI LỄ THÀNH 2 CỘT
+BẢN V25 - SỬA ĐÚNG NHƯ ẢNH BẠN YÊU CẦU
 
 1. THAY file:
    src/components/EventDetails.js
@@ -6,25 +6,17 @@ BẢN V24 - SỬA TRIỆT ĐỂ SECTION THÔNG TIN BUỔI LỄ THÀNH 2 CỘT
 2. Mở:
    src/styles/global.css
 
-   Dán toàn bộ nội dung file:
-   src/styles/v24-event-two-columns.css
+   và dán toàn bộ nội dung file:
+   src/styles/v25-event-equal-cards.css
 
    xuống CUỐI file global.css.
 
 KẾT QUẢ:
-- Cột trái:
-  + THỜI GIAN
-  + 10:30 - 12:00
-  + Thứ Năm, ngày 30/07/2026
-  + Thêm vào Google Calendar
+- Khung trái và khung phải dùng chính xác cùng màu nền.
+- Hai khung có cùng chiều cao và cùng kích thước.
+- Nút "Thêm vào Google Calendar" nằm hoàn toàn bên trong khung trái.
+- Cột phải giữ nguyên hai số điện thoại.
+- Desktop: 2 cột cạnh nhau.
+- Mobile: tự xếp dọc.
 
-- Cột phải:
-  Khi đến nơi, bạn vui lòng liên hệ để được hướng dẫn:
-  📞 Thủy Thương: 0707 250 103
-  📞 Vy: 0794 334 309
-
-- Hai khung cùng màu, cùng chiều cao.
-- Desktop hiển thị cạnh nhau.
-- Mobile tự xếp dọc.
-
-V24 dùng class riêng có hậu tố -v24 và !important để CSS cũ không làm layout bị dính thành một hàng nữa.
+V25 dùng class riêng hoàn toàn để CSS cũ không kéo nút Calendar ra ngoài nữa.

@@ -22,61 +22,65 @@ export default function EventDetails() {
         <p className="eyebrow">{t.event.eyebrow}</p>
         <h2>{t.event.title}</h2>
 
-        <div className="event-info-grid-v24">
-          {/* CỘT TRÁI */}
-          <article className="event-info-card-v24">
-            <div className="event-info-icon-v24" aria-hidden="true">
-              ◷
+        <div className="event-v25-grid">
+          {/* KHUNG TRÁI */}
+          <article className="event-v25-card">
+            <div className="event-v25-card__top">
+              <div className="event-v25-icon" aria-hidden="true">◷</div>
+
+              <h3 className="event-v25-title">
+                {t.event.timeHeading}
+              </h3>
+
+              <p className="event-v25-time">
+                <strong>{t.event.time}</strong>
+              </p>
+
+              <p className="event-v25-date">
+                {t.event.date}
+              </p>
             </div>
 
-            <h3 className="event-info-heading-v24">
-              {t.event.timeHeading}
-            </h3>
-
-            <p className="event-info-time-v24">
-              <strong>{t.event.time}</strong>
-            </p>
-
-            <p className="event-info-date-v24">
-              {t.event.date}
-            </p>
-
-            <a
-              className="button event-calendar-v24"
-              href={calendarUrl}
-              target="_blank"
-              rel="noreferrer"
-            >
-              {t.event.calendar}
-            </a>
+            {/* Nút nằm BÊN TRONG khung trái */}
+            <div className="event-v25-card__bottom">
+              <a
+                className="button event-v25-calendar"
+                href={calendarUrl}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {t.event.calendar}
+              </a>
+            </div>
           </article>
 
-          {/* CỘT PHẢI */}
-          <article className="event-info-card-v24 event-contact-card-v24">
-            <div className="event-info-icon-v24 event-info-icon-v24--gold" aria-hidden="true">
-              ☎
-            </div>
+          {/* KHUNG PHẢI */}
+          <article className="event-v25-card">
+            <div className="event-v25-card__top">
+              <div className="event-v25-icon event-v25-icon--gold" aria-hidden="true">
+                ☎
+              </div>
 
-            <h3 className="event-contact-heading-v24">
-              {t.event.contactHeading}
-            </h3>
+              <h3 className="event-v25-contact-heading">
+                {t.event.contactHeading}
+              </h3>
 
-            <div className="event-contact-list-v24">
-              {t.event.contacts.map((contact) => (
-                <a
-                  className="event-contact-item-v24"
-                  href={`tel:${contact.phone.replace(/\s/g, "")}`}
-                  key={contact.phone}
-                >
-                  <span className="event-contact-phone-v24" aria-hidden="true">
-                    📞
-                  </span>
-
-                  <span className="event-contact-text-v24">
-                    <strong>{contact.name}:</strong> {contact.phone}
-                  </span>
-                </a>
-              ))}
+              <div className="event-v25-contact-list">
+                {t.event.contacts.map((contact) => (
+                  <a
+                    className="event-v25-contact-item"
+                    href={`tel:${contact.phone.replace(/\s/g, "")}`}
+                    key={contact.phone}
+                  >
+                    <span className="event-v25-contact-icon" aria-hidden="true">
+                      📞
+                    </span>
+                    <span>
+                      <strong>{contact.name}:</strong> {contact.phone}
+                    </span>
+                  </a>
+                ))}
+              </div>
             </div>
           </article>
         </div>
