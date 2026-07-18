@@ -8,7 +8,6 @@ import GallerySection from "../components/GallerySection";
 import ThankYouSection from "../components/ThankYouSection";
 import Footer from "../components/Footer";
 import LanguageToggle from "../components/LanguageToggle";
-import BackgroundMusic from "../components/BackgroundMusic";
 import { LanguageProvider } from "../context/LanguageContext";
 import { getQueryValue } from "../utils/getQueryValue";
 
@@ -21,7 +20,6 @@ function PageContent() {
 
   return (
     <main>
-      <BackgroundMusic />
       <LanguageToggle />
 
       <InvitationHero guestName={guestName} />

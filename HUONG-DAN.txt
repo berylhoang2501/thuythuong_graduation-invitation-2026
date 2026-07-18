@@ -1,32 +1,27 @@
-BẢN V22 - NÚT NHẠC THEO MẪU music-player.tsx
+BẢN V23 - XÓA TOÀN BỘ NHẠC, TRỞ VỀ NHƯ CŨ
 
-Mình tham khảo các đặc điểm chính của file mẫu:
-- nút tròn nền trắng;
-- vòng progress ring bên ngoài;
-- khi phát nhạc: 3 thanh equalizer chuyển động;
-- khi dừng: hiện biểu tượng 🎵;
-- nền gradient nhẹ;
-- chấm trạng thái nhỏ khi đang phát;
-- hiệu ứng hover, pulse và ripple.
+1. THAY file:
+   src/pages/index.js
 
-Bản này không dùng motion/react để tránh phải thêm dependency mới.
-Mọi animation được làm bằng CSS nên phù hợp project Gatsby hiện tại.
+File này đã xóa hoàn toàn:
+- import BackgroundMusic
+- <BackgroundMusic />
 
-CÁCH LÀM:
-
-1. Thay:
+2. XÓA file nếu đang có:
    src/components/BackgroundMusic.js
 
-2. Mở:
+3. Để chắc chắn không còn nút/iframe nhạc cũ, mở:
    src/styles/global.css
 
-   Dán toàn bộ nội dung:
-   src/styles/v22-music-player-button.css
+   và dán toàn bộ nội dung file:
+   src/styles/v23-remove-music.css
 
    xuống CUỐI file global.css.
 
-3. Không cần sửa index.js nếu bạn đã có:
-   <BackgroundMusic />
+Sau đó commit vào main và chờ GitHub Actions build xong.
+Cuối cùng hard refresh:
+Mac: Cmd + Shift + R
+Windows: Ctrl + Shift + R
 
-Lưu ý:
-YouTube vẫn chỉ làm nguồn nhạc nền và không hiển thị video.
+Các phần khác như tuyết, ngôn ngữ, cá nhân hóa tên khách, thông tin buổi lễ,
+địa điểm, countdown và gallery vẫn giữ nguyên.

@@ -1,0 +1,13 @@
+/* V23 - Dọn sạch toàn bộ giao diện nhạc cũ.
+   Có thể dán xuống cuối global.css để đảm bảo các thành phần nhạc cũ không hiện
+   trong trường hợp trình duyệt/Gatsby còn cache component cũ. */
+
+.youtube-audio-only-player,
+.youtube-music-player,
+.music-toggle,
+.music-player-wrap,
+.music-progress-ring,
+.music-player-button,
+.music-playing-dot {
+  display: none !important;
+}
