@@ -1,0 +1,89 @@
+/* V21 - CHỈ PHÁT NHẠC, KHÔNG HIỆN VIDEO */
+
+/* Giữ iframe YouTube tồn tại với kích thước tối thiểu hợp lệ,
+   nhưng đưa hoàn toàn ra ngoài vùng hiển thị.
+   Người dùng sẽ không thấy video trên website. */
+.youtube-audio-only-player {
+  position: fixed !important;
+  left: -10000px !important;
+  top: -10000px !important;
+  width: 200px !important;
+  height: 200px !important;
+  overflow: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  clip-path: inset(50%) !important;
+  z-index: -9999 !important;
+}
+
+.youtube-audio-only-player iframe {
+  display: block !important;
+  width: 200px !important;
+  height: 200px !important;
+  border: 0 !important;
+}
+
+/* Nút nhạc phía trên nút ngôn ngữ */
+.music-toggle {
+  position: fixed;
+  left: 18px;
+  bottom: 92px;
+  z-index: 1100;
+
+  display: grid;
+  place-items: center;
+
+  width: 58px;
+  height: 58px;
+  padding: 0;
+
+  border: 1px solid rgba(20, 33, 61, 0.1);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.97);
+  color: #14213d;
+
+  box-shadow: 0 12px 34px rgba(20, 33, 61, 0.2);
+  cursor: pointer;
+  backdrop-filter: blur(12px);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.music-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 40px rgba(20, 33, 61, 0.25);
+}
+
+.music-toggle:active {
+  transform: scale(0.96);
+}
+
+.music-toggle__svg {
+  width: 32px;
+  height: 32px;
+}
+
+.music-toggle--paused {
+  background: rgba(255, 245, 247, 0.98);
+}
+
+.language-toggle {
+  z-index: 1100;
+}
+
+@media (max-width: 650px) {
+  .music-toggle {
+    left: 12px;
+    bottom: 80px;
+    width: 52px;
+    height: 52px;
+  }
+
+  .music-toggle__svg {
+    width: 28px;
+    height: 28px;
+  }
+}

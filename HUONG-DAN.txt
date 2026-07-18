@@ -1,19 +1,31 @@
-BẢN V20
+BẢN V21 - NHẠC NỀN YOUTUBE KHÔNG HIỂN THỊ VIDEO
+
+Ý đúng của bạn:
+- Không hiển thị video YouTube trên website.
+- Khi khách nhấn/chạm vào trang lần đầu tiên, nhạc bắt đầu phát.
+- Nút nhạc nằm phía trên nút EN/VI.
+- Nhấn nút để tạm dừng / phát tiếp.
+
+CÁCH LÀM:
 
 1. Thay file:
-   src/components/EventDetails.js
+   src/components/BackgroundMusic.js
 
 2. Mở:
    src/styles/global.css
 
-   và dán toàn bộ nội dung file:
-   src/styles/v20-event-equal-cards.css
+   Dán toàn bộ nội dung file:
+   src/styles/v21-audio-only-youtube.css
 
    xuống CUỐI file global.css.
 
-Kết quả:
-- Hai khung trái/phải cùng màu nền.
-- Hai khung cùng chiều cao và kích thước cân đối.
-- Nút "Thêm vào Google Calendar" nằm hẳn bên trong khung bên trái.
-- Cột phải vẫn giữ phần liên hệ.
-- Trên điện thoại hai khung tự xếp dọc.
+3. Đảm bảo src/pages/index.js vẫn có:
+   import BackgroundMusic from "../components/BackgroundMusic";
+
+   và trong <main> có:
+   <BackgroundMusic />
+
+LƯU Ý:
+Trình duyệt hiện đại thường không cho website tự phát nhạc có tiếng trước khi
+người dùng tương tác. Vì vậy bản này sẽ phát nhạc ngay ở lần click/chạm đầu tiên
+trên trang. Video YouTube vẫn hoàn toàn ẩn.
