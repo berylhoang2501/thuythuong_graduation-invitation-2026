@@ -16,7 +16,7 @@ export default function InvitationHero({ guestName }) {
 
       <div className="hero__overlay" />
 
-      {/* Hiệu ứng tuyết chỉ xuất hiện ở trang đầu / hero */}
+      {/* Tuyết trắng chỉ hiển thị trong hero đầu trang */}
       <SnowfallEffect />
 
       <div className="hero__content">

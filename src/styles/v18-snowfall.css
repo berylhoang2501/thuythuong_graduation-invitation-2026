@@ -1,0 +1,89 @@
+/* V18 - TUYẾT TRẮNG RƠI RÕ HƠN, DỄ NHÌN HƠN */
+
+/* Đảm bảo hero là vùng chứa hiệu ứng */
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Ảnh dưới cùng */
+.hero__image {
+  z-index: 0 !important;
+}
+
+/* Màn tối nằm trên ảnh */
+.hero__overlay {
+  z-index: 1 !important;
+}
+
+/* Tuyết nằm trên màn tối nhưng dưới phần chữ */
+.snowfall {
+  position: absolute;
+  inset: 0;
+  z-index: 8 !important;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Phần chữ luôn nằm trên tuyết */
+.hero__content {
+  position: relative;
+  z-index: 20 !important;
+}
+
+.snowflake {
+  position: absolute;
+  top: -12vh;
+  display: block;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow:
+    0 0 5px rgba(255,255,255,0.95),
+    0 0 12px rgba(255,255,255,0.75);
+  animation-name: snowfall-v18;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  will-change: transform;
+}
+
+/* Biến thể để tuyết nhìn tự nhiên hơn */
+.snowflake--0 {
+  filter: blur(0);
+}
+
+.snowflake--1 {
+  filter: blur(0.5px);
+}
+
+.snowflake--2 {
+  filter: blur(1px);
+}
+
+@keyframes snowfall-v18 {
+  0% {
+    transform: translate3d(0, -10vh, 0) rotate(0deg);
+  }
+
+  50% {
+    transform: translate3d(calc(var(--snow-drift) * 0.45), 52vh, 0) rotate(180deg);
+  }
+
+  100% {
+    transform: translate3d(var(--snow-drift), 118vh, 0) rotate(360deg);
+  }
+}
+
+/* Trên điện thoại vẫn giữ khá nhiều tuyết nhưng nhẹ hơn desktop */
+@media (max-width: 650px) {
+  .snowflake:nth-child(3n) {
+    display: none;
+  }
+}
+
+/* Không tắt hoàn toàn hiệu ứng khi bật Reduce Motion,
+   chỉ làm tuyết rơi chậm hơn */
+@media (prefers-reduced-motion: reduce) {
+  .snowflake {
+    animation-duration: 18s !important;
+  }
+}

@@ -1,7 +1,32 @@
-BẢN V17
+BẢN V18 - SỬA TUYẾT KHÔNG NHÌN THẤY
 
-Chỉ cần thay 1 file:
-src/i18n.js
+Lý do bản trước có thể rất khó thấy:
+- hạt tuyết quá nhỏ;
+- opacity thấp;
+- số lượng ít;
+- z-index có thể bị các CSS cũ ghi đè.
 
-Đã đổi các chỗ xưng "Thương" thành "Thủy Thương" trong cả tiếng Việt và tiếng Anh,
-đồng thời giữ nguyên họ tên đầy đủ "Hoàng Ngọc Thủy Thương".
+V18 làm tuyết rõ hơn:
+- 80 hạt tuyết;
+- kích thước 6px - 15px;
+- màu trắng rõ, có glow;
+- z-index được ép nằm trên lớp màn tối;
+- phần chữ vẫn nằm trên tuyết.
+
+CÁCH LÀM:
+1. Thay file:
+   src/components/SnowfallEffect.js
+
+2. Thay file:
+   src/components/InvitationHero.js
+
+3. Mở:
+   src/styles/global.css
+
+   rồi dán toàn bộ nội dung:
+   src/styles/v18-snowfall.css
+
+   xuống CUỐI file global.css.
+
+Sau khi commit và GitHub Actions build xong:
+- hard refresh trình duyệt: Cmd + Shift + R trên Mac.
