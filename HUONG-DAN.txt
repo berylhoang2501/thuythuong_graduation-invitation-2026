@@ -1,13 +1,10 @@
-BẢN V5 - CHỈ CẦN THAY 4 FILE
+BẢN V6 - CHỈ CẦN THAY 2 FILE
 
-1. src/i18n.js
-2. src/components/InvitationMessage.js
-3. src/components/EventDetails.js
-4. src/pages/index.js
+1. src/components/GallerySection.js
+2. src/styles/global.css
 
 Thay đổi:
-- Thời gian buổi lễ: 10:30 - 12:00.
-- Google Calendar cũng đổi thành 10:30 - 12:00 ngày 30/07/2026.
-- Bỏ dòng chữ nhỏ màu vàng 'MỘT CỘT MỐC ĐÁNG NHỚ' ở section giới thiệu.
-- Di chuyển section Đếm ngược xuống sau Địa điểm và trước Kỷ niệm tốt nghiệp.
-- Bản tiếng Anh được cập nhật tương ứng.
+- "THIỆP MỜI" trên ảnh đầu trang được làm lớn hơn, sáng hơn, có nền navy trong suốt và viền vàng để nổi bật.
+- Section ĐẾM NGƯỢC giữ nền navy.
+- Section KỶ NIỆM TỐT NGHIỆP chuyển sang nền kem sáng riêng, tạo ranh giới rõ ràng giữa hai section.
+- Gallery vẫn hiển thị 4 ảnh như trước.

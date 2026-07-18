@@ -13,9 +13,9 @@ export default function GallerySection() {
   const { t } = useLanguage();
 
   return (
-    <section className="section section--navy">
+    <section className="section section--gallery">
       <div className="container">
-        <p className="eyebrow eyebrow--gold">{t.gallery.eyebrow}</p>
+        <p className="eyebrow">{t.gallery.eyebrow}</p>
         <h2>{t.gallery.title}</h2>
 
         <div className="gallery">
