@@ -1,17 +1,21 @@
-BẢN V9
+BẢN V10
 
-Thay file:
-1. src/components/GallerySection.js
-
-Sau đó mở:
+Mở file:
 src/styles/global.css
 
 và dán toàn bộ nội dung file:
-src/styles/v9-hero-gallery.css
+src/styles/v10-section-eyebrows.css
 
 xuống CUỐI file global.css.
 
 Thay đổi:
-- Bỏ dòng "KỶ NIỆM TỐT NGHIỆP" phía trên "Khoảnh khắc tốt nghiệp".
-- Chữ "THIỆP MỜI" dùng đúng màu vàng #f2c66d giống tên "Hoàng Ngọc Thủy Thương".
-- Chữ "THIỆP MỜI" được tăng kích thước rõ rệt và padding lớn hơn.
+- Tăng kích thước các nhãn nhỏ màu vàng như:
+  THÔNG TIN BUỔI LỄ
+  ĐỊA ĐIỂM
+  ĐẾM NGƯỢC
+  LỜI CẢM ƠN
+- Không làm nhỏ lại chữ THIỆP MỜI đã chỉnh ở V9.
+- Trên điện thoại tự giảm nhẹ kích thước để không bị tràn.
+
+Lưu ý:
+- Dòng KỶ NIỆM TỐT NGHIỆP hiện đang bị ẩn theo yêu cầu trước đó ở V9, nên CSS này không làm nó xuất hiện trở lại.

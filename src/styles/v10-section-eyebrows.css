@@ -1,0 +1,37 @@
+/* V10 - Tăng kích thước các nhãn nhỏ màu vàng của từng section */
+
+/* Áp dụng cho:
+   THÔNG TIN BUỔI LỄ
+   ĐỊA ĐIỂM
+   ĐẾM NGƯỢC
+   LỜI CẢM ƠN
+   và các eyebrow khác đang còn hiển thị
+*/
+.eyebrow {
+  font-size: clamp(1rem, 1.8vw, 1.2rem) !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.22em !important;
+  line-height: 1.35 !important;
+  margin-bottom: 16px !important;
+}
+
+/* Giữ màu vàng sáng cho eyebrow trên nền navy */
+.eyebrow--gold {
+  color: #f2c66d !important;
+}
+
+/* Không làm ảnh hưởng kích thước riêng của chữ THIỆP MỜI đã chỉnh ở V9 */
+.hero__eyebrow {
+  font-size: clamp(1.35rem, 2.8vw, 1.8rem) !important;
+}
+
+@media (max-width: 650px) {
+  .eyebrow {
+    font-size: 0.95rem !important;
+    letter-spacing: 0.18em !important;
+  }
+
+  .hero__eyebrow {
+    font-size: 1.15rem !important;
+  }
+}
