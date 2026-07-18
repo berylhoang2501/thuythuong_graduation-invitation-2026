@@ -1,0 +1,22 @@
+{
+  "name": "thuy-thuong-graduation-invitation",
+  "private": true,
+  "description": "Thiệp mời Lễ Tốt Nghiệp Năm 2026 của Hoàng Ngọc Thủy Thương",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "build:pages": "gatsby build --prefix-paths",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "gatsby": "^2.21.37",
+    "gatsby-plugin-react-helmet": "^3.10.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-helmet": "^6.0.0"
+  }
+}
