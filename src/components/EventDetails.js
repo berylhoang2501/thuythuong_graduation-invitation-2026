@@ -10,9 +10,7 @@ export default function EventDetails() {
     encodeURIComponent(t.event.calendarTitle) +
     "&dates=20260730T033000Z/20260730T050000Z" +
     "&location=" +
-    encodeURIComponent(
-      "Nhà hát Hòa Bình, 240 Đường 3 tháng 2, Phường Hòa Hưng, TP.HCM"
-    ) +
+    encodeURIComponent("Nhà hát Hòa Bình, 240 Đường 3 tháng 2, Phường Hòa Hưng, TP.HCM") +
     "&details=" +
     encodeURIComponent(t.event.calendarDetails);
 
@@ -22,65 +20,50 @@ export default function EventDetails() {
         <p className="eyebrow">{t.event.eyebrow}</p>
         <h2>{t.event.title}</h2>
 
-        <div className="event-v25-grid">
-          {/* KHUNG TRÁI */}
-          <article className="event-v25-card">
-            <div className="event-v25-card__top">
-              <div className="event-v25-icon" aria-hidden="true">◷</div>
+        <div className="event-equal-grid">
+          {/* Cột trái: thời gian + Google Calendar trong cùng khung */}
+          <article className="event-equal-card">
+            <div className="event-equal-card__icon" aria-hidden="true">◷</div>
 
-              <h3 className="event-v25-title">
-                {t.event.timeHeading}
-              </h3>
+            <h3>{t.event.timeHeading}</h3>
+            <p className="event-time">
+              <strong>{t.event.time}</strong>
+            </p>
+            <p className="event-date">{t.event.date}</p>
 
-              <p className="event-v25-time">
-                <strong>{t.event.time}</strong>
-              </p>
-
-              <p className="event-v25-date">
-                {t.event.date}
-              </p>
-            </div>
-
-            {/* Nút nằm BÊN TRONG khung trái */}
-            <div className="event-v25-card__bottom">
-              <a
-                className="button event-v25-calendar"
-                href={calendarUrl}
-                target="_blank"
-                rel="noreferrer"
-              >
-                {t.event.calendar}
-              </a>
-            </div>
+            <a
+              className="button event-calendar-button"
+              href={calendarUrl}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {t.event.calendar}
+            </a>
           </article>
 
-          {/* KHUNG PHẢI */}
-          <article className="event-v25-card">
-            <div className="event-v25-card__top">
-              <div className="event-v25-icon event-v25-icon--gold" aria-hidden="true">
-                ☎
-              </div>
+          {/* Cột phải: thông tin liên hệ */}
+          <article className="event-equal-card">
+            <div className="event-equal-card__icon event-equal-card__icon--gold" aria-hidden="true">
+              ☎
+            </div>
 
-              <h3 className="event-v25-contact-heading">
-                {t.event.contactHeading}
-              </h3>
+            <h3 className="event-contact-heading">
+              {t.event.contactHeading}
+            </h3>
 
-              <div className="event-v25-contact-list">
-                {t.event.contacts.map((contact) => (
-                  <a
-                    className="event-v25-contact-item"
-                    href={`tel:${contact.phone.replace(/\s/g, "")}`}
-                    key={contact.phone}
-                  >
-                    <span className="event-v25-contact-icon" aria-hidden="true">
-                      📞
-                    </span>
-                    <span>
-                      <strong>{contact.name}:</strong> {contact.phone}
-                    </span>
-                  </a>
-                ))}
-              </div>
+            <div className="event-contact-list">
+              {t.event.contacts.map((contact) => (
+                <a
+                  className="event-contact-item"
+                  href={`tel:${contact.phone.replace(/\s/g, "")}`}
+                  key={contact.phone}
+                >
+                  <span className="event-contact-phone-icon" aria-hidden="true">📞</span>
+                  <span>
+                    <strong>{contact.name}:</strong> {contact.phone}
+                  </span>
+                </a>
+              ))}
             </div>
           </article>
         </div>
