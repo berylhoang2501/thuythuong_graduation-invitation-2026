@@ -1,32 +1,28 @@
-BẢN V18 - SỬA TUYẾT KHÔNG NHÌN THẤY
+BẢN V19 - NHẠC NỀN YOUTUBE + NÚT TẮT/BẬT NHẠC
 
-Lý do bản trước có thể rất khó thấy:
-- hạt tuyết quá nhỏ;
-- opacity thấp;
-- số lượng ít;
-- z-index có thể bị các CSS cũ ghi đè.
+Bài YouTube:
+https://www.youtube.com/watch?v=cOEuJq-TnZs
 
-V18 làm tuyết rõ hơn:
-- 80 hạt tuyết;
-- kích thước 6px - 15px;
-- màu trắng rõ, có glow;
-- z-index được ép nằm trên lớp màn tối;
-- phần chữ vẫn nằm trên tuyết.
-
-CÁCH LÀM:
-1. Thay file:
-   src/components/SnowfallEffect.js
+1. Thêm file mới:
+   src/components/BackgroundMusic.js
 
 2. Thay file:
-   src/components/InvitationHero.js
+   src/pages/index.js
 
 3. Mở:
    src/styles/global.css
 
-   rồi dán toàn bộ nội dung:
-   src/styles/v18-snowfall.css
+   và dán toàn bộ nội dung file:
+   src/styles/v19-background-music.css
 
    xuống CUỐI file global.css.
 
-Sau khi commit và GitHub Actions build xong:
-- hard refresh trình duyệt: Cmd + Shift + R trên Mac.
+Kết quả:
+- Bài YouTube được dùng làm nhạc nền.
+- Nút nhạc hình tròn nằm ngay phía trên nút EN/VI.
+- Khi nhạc đang bật: biểu tượng nốt nhạc.
+- Khi tắt: xuất hiện đường gạch đỏ.
+- Nhấn lại để bật nhạc.
+- Nhạc được đặt loop.
+- Trình duyệt có thể chặn autoplay có tiếng; trong trường hợp đó,
+  lần click/chạm đầu tiên trên trang sẽ kích hoạt nhạc.
