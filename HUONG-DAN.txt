@@ -1,28 +1,19 @@
-BẢN V19 - NHẠC NỀN YOUTUBE + NÚT TẮT/BẬT NHẠC
+BẢN V20
 
-Bài YouTube:
-https://www.youtube.com/watch?v=cOEuJq-TnZs
+1. Thay file:
+   src/components/EventDetails.js
 
-1. Thêm file mới:
-   src/components/BackgroundMusic.js
-
-2. Thay file:
-   src/pages/index.js
-
-3. Mở:
+2. Mở:
    src/styles/global.css
 
    và dán toàn bộ nội dung file:
-   src/styles/v19-background-music.css
+   src/styles/v20-event-equal-cards.css
 
    xuống CUỐI file global.css.
 
 Kết quả:
-- Bài YouTube được dùng làm nhạc nền.
-- Nút nhạc hình tròn nằm ngay phía trên nút EN/VI.
-- Khi nhạc đang bật: biểu tượng nốt nhạc.
-- Khi tắt: xuất hiện đường gạch đỏ.
-- Nhấn lại để bật nhạc.
-- Nhạc được đặt loop.
-- Trình duyệt có thể chặn autoplay có tiếng; trong trường hợp đó,
-  lần click/chạm đầu tiên trên trang sẽ kích hoạt nhạc.
+- Hai khung trái/phải cùng màu nền.
+- Hai khung cùng chiều cao và kích thước cân đối.
+- Nút "Thêm vào Google Calendar" nằm hẳn bên trong khung bên trái.
+- Cột phải vẫn giữ phần liên hệ.
+- Trên điện thoại hai khung tự xếp dọc.
