@@ -15,6 +15,7 @@ export default function GallerySection() {
   return (
     <section className="section section--gallery">
       <div className="container">
+        <p className="eyebrow">{t.gallery.eyebrow}</p>
         <h2>{t.gallery.title}</h2>
 
         <div className="gallery">

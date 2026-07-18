@@ -1,16 +1,26 @@
-BẢN V11 - SỬA CHỮ "THIỆP MỜI" BỊ MỜ
+BẢN V12 - THAY FILE TRỰC TIẾP, KHÔNG DÁN CSS CHỒNG LÊN NỮA
 
-Mở file:
-src/styles/global.css
+Lý do V11 nhìn gần như cũ:
+Trong global.css của bạn đang có nhiều patch V6, V9, V10, V11 cùng ghi đè .hero__eyebrow.
+Vì vậy CSS cũ vẫn có thể thắng tùy thứ tự.
 
-Dán toàn bộ nội dung file:
-src/styles/v11-hero-layer.css
+V12 xử lý triệt để:
+1. Đổi class "THIỆP MỜI" từ hero__eyebrow thành hero__invite-label.
+   -> CSS cũ không thể ghi đè nữa.
+2. Bỏ hoàn toàn nền viên thuốc, viền, blur của "THIỆP MỜI".
+3. Tăng chữ "THIỆP MỜI" lên lớn hơn và cùng layer với tiêu đề.
+4. Tăng kích thước:
+   THÔNG TIN BUỔI LỄ
+   ĐỊA ĐIỂM
+   ĐẾM NGƯỢC
+   KỶ NIỆM TỐT NGHIỆP
+   LỜI CẢM ƠN
+5. Khôi phục dòng "KỶ NIỆM TỐT NGHIỆP" theo yêu cầu mới nhất.
+6. Giữ nguyên layout ĐỊA ĐIỂM 2 cột và bản đồ.
 
-xuống CUỐI file global.css.
+HÃY THAY HẲN 3 FILE:
+- src/components/InvitationHero.js
+- src/components/GallerySection.js
+- src/styles/global.css
 
-Kết quả:
-- "THIỆP MỜI" được đưa lên cùng layer với tiêu đề "LỄ TỐT NGHIỆP NĂM 2026".
-- Bỏ nền tối dạng viên thuốc, border và backdrop-filter làm chữ trông bị chìm.
-- Giữ chữ màu vàng giống "Hoàng Ngọc Thủy Thương".
-- Tăng kích thước chữ "THIỆP MỜI".
-- Ép opacity = 1 và z-index cao hơn lớp phủ tối.
+Không dán thêm patch CSS cũ nữa.

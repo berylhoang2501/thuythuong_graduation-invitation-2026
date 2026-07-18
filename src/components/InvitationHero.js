@@ -13,8 +13,11 @@ export default function InvitationHero({ guestName }) {
         alt={t.hero.name}
       />
       <div className="hero__overlay" />
+
       <div className="hero__content">
-        <p className="eyebrow hero__eyebrow">{t.hero.eyebrow}</p>
+        {/* Dùng class riêng hoàn toàn để không bị CSS .eyebrow cũ ghi đè */}
+        <div className="hero__invite-label">{t.hero.eyebrow}</div>
+
         <h1>{t.hero.title}</h1>
         <p className="hero__name">{t.hero.name}</p>
 

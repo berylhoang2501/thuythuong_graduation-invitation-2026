@@ -23,6 +23,10 @@ a {
   color: inherit;
 }
 
+/* =========================
+   HERO
+   ========================= */
+
 .hero {
   position: relative;
   min-height: 100svh;
@@ -30,12 +34,13 @@ a {
   place-items: center;
   overflow: hidden;
   background: #071a36;
-  color: white;
+  color: #fff;
 }
 
 .hero__image {
   position: absolute;
   inset: 0;
+  z-index: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -45,45 +50,65 @@ a {
 .hero__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(3, 14, 34, 0.30), rgba(3, 14, 34, 0.78));
+  z-index: 1;
+  background: linear-gradient(
+    180deg,
+    rgba(3, 14, 34, 0.28),
+    rgba(3, 14, 34, 0.76)
+  );
+  pointer-events: none;
 }
 
 .hero__content {
   position: relative;
-  z-index: 1;
+  z-index: 10;
   width: min(980px, calc(100% - 36px));
   padding: 80px 0;
   text-align: center;
   text-shadow: 0 2px 18px rgba(0, 0, 0, 0.38);
 }
 
+/* QUAN TRỌNG:
+   "THIỆP MỜI" dùng class riêng, không còn dính với .eyebrow.
+   Không nền, không viền, không blur, cùng layer với tiêu đề chính.
+*/
+.hero__invite-label {
+  position: relative;
+  z-index: 12;
+  display: block;
+  margin: 0 auto 24px;
+  padding: 0;
+  color: #f2c66d;
+  font-family: Arial, sans-serif;
+  font-size: clamp(1.8rem, 3.4vw, 2.45rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: 0.22em;
+  opacity: 1;
+  filter: none;
+  background: none;
+  border: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  text-shadow:
+    0 2px 5px rgba(0, 0, 0, 0.68),
+    0 0 16px rgba(242, 198, 109, 0.22);
+}
+
 .hero h1 {
-  margin: 16px auto 12px;
+  position: relative;
+  z-index: 12;
+  margin: 8px auto 12px;
   max-width: 880px;
   font-size: clamp(2.4rem, 8vw, 5.5rem);
   line-height: 0.98;
   letter-spacing: 0.03em;
 }
 
-.hero__eyebrow {
-  display: inline-block;
-  margin: 0 auto 18px;
-  padding: 10px 20px;
-  border: 1px solid rgba(242, 198, 109, 0.9);
-  border-radius: 999px;
-  background: rgba(7, 26, 54, 0.72);
-  color: #ffd271;
-  font-family: Arial, sans-serif;
-  font-size: clamp(1.05rem, 2.2vw, 1.35rem);
-  font-weight: 800;
-  letter-spacing: 0.30em;
-  line-height: 1;
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.55);
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.18);
-  backdrop-filter: blur(8px);
-}
-
 .hero__name {
+  position: relative;
+  z-index: 12;
   margin: 24px 0 10px;
   color: #f2c66d;
   font-size: clamp(1.7rem, 5vw, 3rem);
@@ -91,9 +116,20 @@ a {
 }
 
 .hero__guest {
+  position: relative;
+  z-index: 12;
   margin: 0 auto 30px;
   font-size: clamp(1rem, 2.5vw, 1.3rem);
 }
+
+.hero .button {
+  position: relative;
+  z-index: 12;
+}
+
+/* =========================
+   SECTION CHUNG
+   ========================= */
 
 .section {
   padding: 88px 20px;
@@ -124,13 +160,21 @@ a {
   width: min(760px, 100%);
 }
 
+/* Tăng rõ rệt các nhãn:
+   THÔNG TIN BUỔI LỄ
+   ĐỊA ĐIỂM
+   ĐẾM NGƯỢC
+   KỶ NIỆM TỐT NGHIỆP
+   LỜI CẢM ƠN
+*/
 .eyebrow {
-  margin: 0 0 12px;
+  margin: 0 0 18px;
   color: #9b6b17;
   font-family: Arial, sans-serif;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.24em;
+  font-size: clamp(1.18rem, 2vw, 1.5rem);
+  font-weight: 800;
+  line-height: 1.35;
+  letter-spacing: 0.2em;
 }
 
 .eyebrow--gold {
@@ -167,6 +211,10 @@ h2 {
   backdrop-filter: blur(8px);
 }
 
+/* =========================
+   COUNTDOWN
+   ========================= */
+
 .countdown {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -194,6 +242,10 @@ h2 {
   text-transform: uppercase;
   letter-spacing: 0.12em;
 }
+
+/* =========================
+   EVENT DETAILS
+   ========================= */
 
 .details-grid {
   display: grid;
@@ -226,7 +278,7 @@ h2 {
 }
 
 /* =========================
-   SECTION ĐỊA ĐIỂM - V8
+   LOCATION - 2 CỘT
    ========================= */
 
 .location-section {
@@ -339,6 +391,10 @@ h2 {
   text-underline-offset: 3px;
 }
 
+/* =========================
+   GALLERY
+   ========================= */
+
 .gallery {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -364,6 +420,10 @@ h2 {
 .gallery__item:hover img {
   transform: scale(1.025);
 }
+
+/* =========================
+   LANGUAGE TOGGLE
+   ========================= */
 
 .language-toggle {
   position: fixed;
@@ -402,6 +462,10 @@ h2 {
   letter-spacing: 0.04em;
 }
 
+/* =========================
+   FOOTER
+   ========================= */
+
 .footer {
   padding: 34px 20px;
   background: #030d1d;
@@ -415,6 +479,10 @@ h2 {
 .footer p {
   margin: 4px;
 }
+
+/* =========================
+   RESPONSIVE
+   ========================= */
 
 @media (max-width: 900px) {
   .location-layout {
@@ -435,10 +503,15 @@ h2 {
     padding: 72px 0;
   }
 
-  .hero__eyebrow {
-    padding: 9px 15px;
+  .hero__invite-label {
+    font-size: 1.35rem;
+    letter-spacing: 0.18em;
+    margin-bottom: 18px;
+  }
+
+  .eyebrow {
     font-size: 1rem;
-    letter-spacing: 0.22em;
+    letter-spacing: 0.16em;
   }
 
   .countdown {
@@ -454,14 +527,8 @@ h2 {
     height: 390px;
   }
 
-  .venue-column h2 {
-    text-align: center;
-  }
-
-  .venue-address {
-    text-align: center;
-  }
-
+  .venue-column h2,
+  .venue-address,
   .parking-column h3 {
     text-align: center;
   }
