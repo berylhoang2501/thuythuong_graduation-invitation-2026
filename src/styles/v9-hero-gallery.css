@@ -1,0 +1,16 @@
+/* V9 - THIỆP MỜI + GALLERY */
+
+/* Làm chữ "THIỆP MỜI" lớn hơn và dùng đúng màu vàng giống tên Hoàng Ngọc Thủy Thương */
+.hero__eyebrow {
+  color: #f2c66d !important;
+  border-color: #f2c66d !important;
+  font-size: clamp(1.35rem, 2.8vw, 1.8rem) !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.24em !important;
+  padding: 12px 24px !important;
+}
+
+/* Đảm bảo tiêu đề gallery không còn khoảng trống thừa do bỏ eyebrow */
+.section--gallery h2 {
+  margin-top: 0;
+}
