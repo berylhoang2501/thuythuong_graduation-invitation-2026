@@ -1,0 +1,7 @@
+THAY 3 FILE NÀY TRONG REPO:
+1) package.json -> thư mục gốc
+2) gatsby-config.js -> thư mục gốc
+3) .github/workflows/gatsby.yml -> thay workflow hiện tại
+
+Sau đó commit vào main. GitHub Actions sẽ tự chạy lại.
+Workflow dùng npm install thay vì npm ci để tránh package-lock.json cũ làm lỗi khi nâng Gatsby.

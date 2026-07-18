@@ -1,4 +1,4 @@
 module.exports = {
-  pathPrefix: `/thuythuong.github.io`,
-  plugins: [`gatsby-plugin-react-helmet`],
+  pathPrefix: "/thuythuong_graduation-invitation-2026",
+  plugins: ["gatsby-plugin-react-helmet"],
 };
