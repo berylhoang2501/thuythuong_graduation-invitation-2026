@@ -1,19 +1,16 @@
 import React from "react";
+import { useLanguage } from "../context/LanguageContext";
 
 export default function InvitationMessage() {
+  const { t } = useLanguage();
+
   return (
     <section className="section">
       <div className="container container--narrow">
-        <p className="eyebrow">A SPECIAL MILESTONE</p>
-        <h2>Một cột mốc đáng nhớ</h2>
-        <p className="lead">
-          Sau một hành trình học tập với nhiều kỷ niệm, Thương rất vui được chia sẻ
-          khoảnh khắc tốt nghiệp cùng gia đình, bạn bè và những người thân yêu.
-        </p>
-        <p>
-          Sự hiện diện của bạn sẽ làm cho ngày đặc biệt này trở nên trọn vẹn và ý nghĩa hơn.
-          Thương rất mong được gặp bạn tại buổi lễ.
-        </p>
+        <p className="eyebrow">{t.message.eyebrow}</p>
+        <h2>{t.message.title}</h2>
+        <p className="lead">{t.message.lead}</p>
+        <p>{t.message.body}</p>
       </div>
     </section>
   );

@@ -1,10 +1,13 @@
 import React from "react";
+import { useLanguage } from "../context/LanguageContext";
 
 export default function Footer() {
+  const { t } = useLanguage();
+
   return (
     <footer className="footer">
-      <p>Hoàng Ngọc Thủy Thương · Graduation 2026</p>
-      <p>30 · 07 · 2026</p>
+      <p>{t.footer.line1}</p>
+      <p>{t.footer.line2}</p>
     </footer>
   );
 }

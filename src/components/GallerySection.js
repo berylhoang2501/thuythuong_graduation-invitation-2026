@@ -1,23 +1,31 @@
 import React from "react";
 import { withPrefix } from "gatsby";
+import { useLanguage } from "../context/LanguageContext";
 
 const photos = [
-  ["IMG_6021.JPG", "Khoảnh khắc tốt nghiệp 1"],
-  ["IMG_6023.JPG", "Khoảnh khắc tốt nghiệp 2"],
-  ["IMG_6026.JPG", "Khoảnh khắc tốt nghiệp 3"],
-  ["IMG_6028.JPG", "Khoảnh khắc tốt nghiệp 4"],
+  "IMG_6021.JPG",
+  "IMG_6023.JPG",
+  "IMG_6026.JPG",
+  "IMG_6028.JPG",
 ];
 
 export default function GallerySection() {
+  const { t } = useLanguage();
+
   return (
     <section className="section section--navy">
       <div className="container">
-        <p className="eyebrow eyebrow--gold">GRADUATION MEMORIES</p>
-        <h2>Khoảnh khắc tốt nghiệp</h2>
+        <p className="eyebrow eyebrow--gold">{t.gallery.eyebrow}</p>
+        <h2>{t.gallery.title}</h2>
+
         <div className="gallery">
-          {photos.map(([file, alt]) => (
+          {photos.map((file, index) => (
             <figure className="gallery__item" key={file}>
-              <img src={withPrefix(`/images/${file}`)} alt={alt} loading="lazy" />
+              <img
+                src={withPrefix(`/images/${file}`)}
+                alt={t.gallery.alts[index]}
+                loading="lazy"
+              />
             </figure>
           ))}
         </div>

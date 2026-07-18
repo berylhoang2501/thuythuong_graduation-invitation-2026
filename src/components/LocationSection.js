@@ -1,19 +1,43 @@
 import React from "react";
+import { useLanguage } from "../context/LanguageContext";
+
+const mapsUrl =
+  "https://www.google.com/maps/search/?api=1&query=" +
+  encodeURIComponent("Nhà hát Hòa Bình, 240 Đường 3 tháng 2, Phường Hòa Hưng, TP.HCM");
+
+const embedUrl =
+  "https://www.google.com/maps?q=" +
+  encodeURIComponent("Nhà hát Hòa Bình, 240 Đường 3 tháng 2, Phường Hòa Hưng, TP.HCM") +
+  "&output=embed";
 
 export default function LocationSection() {
+  const { t } = useLanguage();
+
   return (
-    <section className="section">
-      <div className="container container--narrow">
-        <p className="eyebrow">ĐỊA ĐIỂM</p>
-        <h2>Nhà hát Hòa Bình</h2>
-        <p className="lead">240 Đường 3 tháng 2, Phường Hòa Hưng, TP.HCM</p>
+    <section className="section location-section">
+      <div className="container">
+        <p className="eyebrow">{t.location.eyebrow}</p>
+        <h2>{t.location.title}</h2>
+        <p className="lead">{t.location.address}</p>
+
+        <div className="map-card">
+          <iframe
+            className="map-frame"
+            src={embedUrl}
+            title={t.location.mapTitle}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            allowFullScreen
+          />
+        </div>
+
         <a
           className="button"
-          href="https://www.google.com/maps/search/?api=1&query=Nh%C3%A0+h%C3%A1t+H%C3%B2a+B%C3%ACnh+240+%C4%90%C6%B0%E1%BB%9Dng+3+th%C3%A1ng+2+TPHCM"
+          href={mapsUrl}
           target="_blank"
           rel="noreferrer"
         >
-          Mở Google Maps
+          {t.location.mapButton}
         </a>
       </div>
     </section>

@@ -7,9 +7,11 @@ import LocationSection from "../components/LocationSection";
 import GallerySection from "../components/GallerySection";
 import ThankYouSection from "../components/ThankYouSection";
 import Footer from "../components/Footer";
+import LanguageToggle from "../components/LanguageToggle";
+import { LanguageProvider } from "../context/LanguageContext";
 import { getQueryValue } from "../utils/getQueryValue";
 
-export default function HomePage() {
+function PageContent() {
   const [guestName, setGuestName] = useState("");
 
   useEffect(() => {
@@ -18,6 +20,7 @@ export default function HomePage() {
 
   return (
     <main>
+      <LanguageToggle />
       <InvitationHero guestName={guestName} />
       <Countdown />
       <InvitationMessage />
@@ -27,6 +30,14 @@ export default function HomePage() {
       <ThankYouSection />
       <Footer />
     </main>
+  );
+}
+
+export default function HomePage() {
+  return (
+    <LanguageProvider>
+      <PageContent />
+    </LanguageProvider>
   );
 }
 

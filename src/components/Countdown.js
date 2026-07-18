@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
+import { useLanguage } from "../context/LanguageContext";
 
 const TARGET = new Date("2026-07-30T10:00:00+07:00").getTime();
 
@@ -13,6 +14,7 @@ function getRemaining() {
 }
 
 export default function Countdown() {
+  const { t } = useLanguage();
   const [time, setTime] = useState(getRemaining());
 
   useEffect(() => {
@@ -22,19 +24,19 @@ export default function Countdown() {
 
   const items = useMemo(
     () => [
-      ["Ngày", time.days],
-      ["Giờ", time.hours],
-      ["Phút", time.minutes],
-      ["Giây", time.seconds],
+      [t.countdown.units[0], time.days],
+      [t.countdown.units[1], time.hours],
+      [t.countdown.units[2], time.minutes],
+      [t.countdown.units[3], time.seconds],
     ],
-    [time]
+    [t, time]
   );
 
   return (
     <section className="section section--navy">
       <div className="container">
-        <p className="eyebrow eyebrow--gold">COUNTDOWN</p>
-        <h2>Hẹn gặp bạn tại ngày đặc biệt của Thương</h2>
+        <p className="eyebrow eyebrow--gold">{t.countdown.eyebrow}</p>
+        <h2>{t.countdown.title}</h2>
         <div className="countdown">
           {items.map(([label, value]) => (
             <div className="countdown__item" key={label}>

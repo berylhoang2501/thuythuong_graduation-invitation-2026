@@ -1,28 +1,33 @@
 import React from "react";
 import { withPrefix } from "gatsby";
+import { useLanguage } from "../context/LanguageContext";
 
 export default function InvitationHero({ guestName }) {
+  const { t } = useLanguage();
+
   return (
     <header className="hero">
       <img
         className="hero__image"
         src={withPrefix("/images/IMG_6022.JPG")}
-        alt="Hoàng Ngọc Thủy Thương trong lễ phục tốt nghiệp"
+        alt={t.hero.name}
       />
       <div className="hero__overlay" />
       <div className="hero__content">
-        <p className="eyebrow hero__eyebrow">THIỆP MỜI</p>
-        <h1>LỄ TỐT NGHIỆP NĂM 2026</h1>
-        <p className="hero__name">Hoàng Ngọc Thủy Thương</p>
+        <p className="eyebrow hero__eyebrow">{t.hero.eyebrow}</p>
+        <h1>{t.hero.title}</h1>
+        <p className="hero__name">{t.hero.name}</p>
+
         {guestName ? (
           <p className="hero__guest">
-            Trân trọng kính mời <strong>{guestName}</strong>
+            {t.hero.invitationNamed} <strong>{guestName}</strong>
           </p>
         ) : (
-          <p className="hero__guest">Trân trọng kính mời bạn đến tham dự</p>
+          <p className="hero__guest">{t.hero.invitation}</p>
         )}
+
         <a className="button button--light" href="#event">
-          Xem thông tin buổi lễ
+          {t.hero.button}
         </a>
       </div>
     </header>
