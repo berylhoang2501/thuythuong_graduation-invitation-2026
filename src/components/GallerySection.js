@@ -3,8 +3,8 @@ import { withPrefix } from "gatsby";
 
 const photos = [
   ["IMG_6021.JPG", "Khoảnh khắc tốt nghiệp 1"],
-  ["IMG_6022.JPG", "Khoảnh khắc tốt nghiệp 2"],
-  ["IMG_6023.JPG", "Khoảnh khắc tốt nghiệp 3"],
+  ["IMG_6023.JPG", "Khoảnh khắc tốt nghiệp 2"],
+  ["IMG_6026.JPG", "Khoảnh khắc tốt nghiệp 3"],
   ["IMG_6028.JPG", "Khoảnh khắc tốt nghiệp 4"],
 ];
 
