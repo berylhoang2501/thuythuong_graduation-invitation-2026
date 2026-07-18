@@ -22,10 +22,10 @@ function PageContent() {
     <main>
       <LanguageToggle />
       <InvitationHero guestName={guestName} />
-      <Countdown />
       <InvitationMessage />
       <EventDetails />
       <LocationSection />
+      <Countdown />
       <GallerySection />
       <ThankYouSection />
       <Footer />

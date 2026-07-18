@@ -7,7 +7,6 @@ export default function InvitationMessage() {
   return (
     <section className="section">
       <div className="container container--narrow">
-        <p className="eyebrow">{t.message.eyebrow}</p>
         <h2>{t.message.title}</h2>
         <p className="lead">{t.message.lead}</p>
         <p>{t.message.body}</p>

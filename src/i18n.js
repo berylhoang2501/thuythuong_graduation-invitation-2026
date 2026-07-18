@@ -14,7 +14,6 @@ export const translations = {
       units: ["Ngày", "Giờ", "Phút", "Giây"],
     },
     message: {
-      eyebrow: "MỘT CỘT MỐC ĐÁNG NHỚ",
       title: "Một cột mốc đáng nhớ",
       lead:
         "Sau một hành trình học tập với nhiều kỷ niệm, Thương rất vui được chia sẻ khoảnh khắc tốt nghiệp cùng gia đình, bạn bè và những người thân yêu.",
@@ -25,7 +24,7 @@ export const translations = {
       eyebrow: "THÔNG TIN BUỔI LỄ",
       title: "Lễ Tốt Nghiệp Năm 2026",
       timeHeading: "THỜI GIAN",
-      time: "10:00",
+      time: "10:30 - 12:00",
       date: "Thứ Năm, ngày 30/07/2026",
       calendar: "Thêm vào Google Calendar",
       calendarTitle: "Lễ Tốt Nghiệp 2026 - Hoàng Ngọc Thủy Thương",
@@ -81,7 +80,6 @@ export const translations = {
       units: ["Days", "Hours", "Minutes", "Seconds"],
     },
     message: {
-      eyebrow: "A MEMORABLE MILESTONE",
       title: "A milestone worth celebrating",
       lead:
         "After a meaningful academic journey filled with memories, Thương is delighted to share this graduation moment with family, friends, and loved ones.",
@@ -92,7 +90,7 @@ export const translations = {
       eyebrow: "CEREMONY INFORMATION",
       title: "Graduation Ceremony 2026",
       timeHeading: "TIME",
-      time: "10:00 AM",
+      time: "10:30 AM - 12:00 PM",
       date: "Thursday, July 30, 2026",
       calendar: "Add to Google Calendar",
       calendarTitle: "Graduation Ceremony 2026 - Hoàng Ngọc Thủy Thương",

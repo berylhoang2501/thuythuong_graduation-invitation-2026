@@ -8,7 +8,7 @@ export default function EventDetails() {
     "https://calendar.google.com/calendar/render?action=TEMPLATE" +
     "&text=" +
     encodeURIComponent(t.event.calendarTitle) +
-    "&dates=20260730T030000Z/20260730T050000Z" +
+    "&dates=20260730T033000Z/20260730T050000Z" +
     "&location=" +
     encodeURIComponent("Nhà hát Hòa Bình, 240 Đường 3 tháng 2, Phường Hòa Hưng, TP.HCM") +
     "&details=" +

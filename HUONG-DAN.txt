@@ -1,33 +1,13 @@
-BẢN V4: BẢN ĐỒ + CHUYỂN ĐỔI VIỆT/ANH
+BẢN V5 - CHỈ CẦN THAY 4 FILE
 
-Thay/cập nhật các file:
-- src/i18n.js
-- src/context/LanguageContext.js
-- src/components/LanguageToggle.js
-- src/components/InvitationHero.js
-- src/components/Countdown.js
-- src/components/InvitationMessage.js
-- src/components/EventDetails.js
-- src/components/LocationSection.js
-- src/components/GallerySection.js
-- src/components/ThankYouSection.js
-- src/components/Footer.js
-- src/pages/index.js
-- src/styles/global.css
+1. src/i18n.js
+2. src/components/InvitationMessage.js
+3. src/components/EventDetails.js
+4. src/pages/index.js
 
-Các thay đổi:
-1. Mặc định toàn bộ nội dung là tiếng Việt.
-2. Nút nổi góc trái dưới hiển thị 🇺🇸 EN. Nhấn để chuyển toàn bộ nội dung sang tiếng Anh.
-3. Khi đang ở tiếng Anh, nút đổi thành 🇻🇳 VI để quay lại tiếng Việt.
-4. Lựa chọn ngôn ngữ được lưu bằng localStorage.
-5. Phần "Thông tin buổi lễ" chỉ còn thông tin thời gian, không lặp lại địa điểm.
-6. Phần "Địa điểm" hiển thị trực tiếp Google Maps trên website và vẫn có nút mở Google Maps.
-7. Gallery vẫn dùng 4 ảnh: IMG_6021.JPG, IMG_6023.JPG, IMG_6026.JPG, IMG_6028.JPG.
-8. Ảnh đầu trang vẫn là IMG_6022.JPG.
-
-Giữ 5 ảnh tại:
-static/images/IMG_6021.JPG
-static/images/IMG_6022.JPG
-static/images/IMG_6023.JPG
-static/images/IMG_6026.JPG
-static/images/IMG_6028.JPG
+Thay đổi:
+- Thời gian buổi lễ: 10:30 - 12:00.
+- Google Calendar cũng đổi thành 10:30 - 12:00 ngày 30/07/2026.
+- Bỏ dòng chữ nhỏ màu vàng 'MỘT CỘT MỐC ĐÁNG NHỚ' ở section giới thiệu.
+- Di chuyển section Đếm ngược xuống sau Địa điểm và trước Kỷ niệm tốt nghiệp.
+- Bản tiếng Anh được cập nhật tương ứng.
