@@ -1,6 +1,7 @@
 import React from "react";
 import { withPrefix } from "gatsby";
 import { useLanguage } from "../context/LanguageContext";
+import SnowfallEffect from "./SnowfallEffect";
 
 export default function InvitationHero({ guestName }) {
   const { t } = useLanguage();
@@ -12,10 +13,13 @@ export default function InvitationHero({ guestName }) {
         src={withPrefix("/images/IMG_6022.JPG")}
         alt={t.hero.name}
       />
+
       <div className="hero__overlay" />
 
+      {/* Hiệu ứng tuyết chỉ xuất hiện ở trang đầu / hero */}
+      <SnowfallEffect />
+
       <div className="hero__content">
-        {/* Dùng class riêng hoàn toàn để không bị CSS .eyebrow cũ ghi đè */}
         <div className="hero__invite-label">{t.hero.eyebrow}</div>
 
         <h1>{t.hero.title}</h1>

@@ -1,18 +1,21 @@
-BẢN V15
+BẢN V16 - HIỆU ỨNG TUYẾT TRẮNG RƠI Ở TRANG ĐẦU
 
-Chỉ cần thay 1 file:
-- src/components/EventDetails.js
+1. Thêm file mới:
+   src/components/SnowfallEffect.js
 
-Bản này sửa lại section THÔNG TIN BUỔI LỄ theo đúng ý:
-- chia 2 cột giống phần ĐỊA ĐIỂM
-- cột trái giữ nguyên:
-  + thời gian
-  + ngày
-  + nút Thêm vào Google Calendar
-- cột phải nằm BÊN PHẢI:
-  + Khi đến nơi, bạn vui lòng liên hệ để được hướng dẫn:
-  + 📞 Thuỷ Thương: 0707 250 103
-  + 📞 Vy: 0794 334 309
+2. Thay file:
+   src/components/InvitationHero.js
 
-Mình dùng trực tiếp class details-grid có sẵn trong global.css,
-nên không cần dán thêm CSS patch nữa.
+3. Mở:
+   src/styles/global.css
+
+   và dán toàn bộ nội dung file:
+   src/styles/v16-snowfall.css
+
+   xuống CUỐI file global.css.
+
+Kết quả:
+- Tuyết trắng rơi nhẹ trên ảnh đầu trang.
+- Tuyết nằm trên ảnh nền/lớp phủ nhưng dưới phần chữ, nên không che tiêu đề.
+- Hiệu ứng chỉ có ở hero đầu trang, không rơi xuống các section phía dưới.
+- Trên điện thoại tự giảm một nửa số hạt tuyết để giữ hiệu năng.

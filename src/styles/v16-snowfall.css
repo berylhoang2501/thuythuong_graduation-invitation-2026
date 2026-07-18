@@ -1,0 +1,61 @@
+/* V16 - HIỆU ỨNG TUYẾT TRẮNG RƠI Ở TRANG ĐẦU */
+
+/* Lớp tuyết nằm trên ảnh và lớp màn tối nhưng dưới nội dung chữ */
+.snowfall {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.snowflake {
+  position: absolute;
+  top: -24px;
+  left: var(--snow-left);
+  width: var(--snow-size);
+  height: var(--snow-size);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, var(--snow-opacity));
+  box-shadow:
+    0 0 6px rgba(255, 255, 255, 0.65),
+    0 0 12px rgba(255, 255, 255, 0.28);
+  animation:
+    snow-fall var(--snow-duration) linear var(--snow-delay) infinite,
+    snow-sway 3.8s ease-in-out var(--snow-delay) infinite alternate;
+  will-change: transform;
+}
+
+@keyframes snow-fall {
+  0% {
+    transform: translate3d(0, -5vh, 0);
+  }
+
+  100% {
+    transform: translate3d(var(--snow-drift), 110vh, 0);
+  }
+}
+
+@keyframes snow-sway {
+  from {
+    margin-left: -10px;
+  }
+
+  to {
+    margin-left: 10px;
+  }
+}
+
+/* Người dùng bật Reduce Motion thì giữ trải nghiệm nhẹ nhàng hơn */
+@media (prefers-reduced-motion: reduce) {
+  .snowflake {
+    animation-duration: 18s, 8s;
+  }
+}
+
+/* Điện thoại: giảm nhẹ số lượng tuyết hiển thị để website mượt hơn */
+@media (max-width: 650px) {
+  .snowflake:nth-child(2n) {
+    display: none;
+  }
+}
