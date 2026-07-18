@@ -20,17 +20,18 @@ export default function EventDetails() {
         <p className="eyebrow">{t.event.eyebrow}</p>
         <h2>{t.event.title}</h2>
 
-        <div className="event-layout">
-          {/* Cột trái: giữ nguyên nội dung thời gian hiện có */}
-          <div className="event-left">
-            <article className="detail-card event-time-card">
+        {/* Chia 2 cột giống phần ĐỊA ĐIỂM */}
+        <div className="details-grid" style={{ alignItems: "stretch", maxWidth: "980px", margin: "38px auto 0" }}>
+          {/* Cột trái: giữ nguyên thông tin hiện có */}
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <article className="detail-card" style={{ flex: 1 }}>
               <span className="detail-card__icon" aria-hidden="true">◷</span>
               <h3>{t.event.timeHeading}</h3>
               <p><strong>{t.event.time}</strong></p>
               <p>{t.event.date}</p>
             </article>
 
-            <div className="actions">
+            <div className="actions" style={{ marginTop: "12px", textAlign: "center" }}>
               <a
                 className="button"
                 href={calendarUrl}
@@ -42,19 +43,62 @@ export default function EventDetails() {
             </div>
           </div>
 
-          {/* Cột phải: thông tin liên hệ khi đến nơi */}
-          <aside className="event-contact-card">
-            <div className="event-contact-icon" aria-hidden="true">☎</div>
-            <h3>{t.event.contactHeading}</h3>
+          {/* Cột phải: liên hệ hướng dẫn */}
+          <aside
+            className="detail-card"
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              textAlign: "left",
+              padding: "34px 28px",
+            }}
+          >
+            <div
+              aria-hidden="true"
+              style={{
+                textAlign: "center",
+                fontSize: "2rem",
+                color: "#9b6b17",
+                marginBottom: "14px",
+              }}
+            >
+              ☎
+            </div>
 
-            <div className="event-contact-list">
+            <h3
+              style={{
+                marginTop: 0,
+                marginBottom: "22px",
+                textTransform: "none",
+                letterSpacing: "0",
+                lineHeight: 1.6,
+                textAlign: "center",
+              }}
+            >
+              {t.event.contactHeading}
+            </h3>
+
+            <div style={{ display: "grid", gap: "14px" }}>
               {t.event.contacts.map((contact) => (
                 <a
-                  className="event-contact-item"
-                  href={`tel:${contact.phone.replace(/\s/g, "")}`}
                   key={contact.phone}
+                  href={`tel:${contact.phone.replace(/\s/g, "")}`}
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "10px",
+                    padding: "14px 16px",
+                    border: "1px solid rgba(20, 33, 61, 0.1)",
+                    borderRadius: "14px",
+                    background: "rgba(255,255,255,0.66)",
+                    color: "#14213d",
+                    textDecoration: "none",
+                    fontFamily: "Arial, sans-serif",
+                    fontSize: "1rem",
+                  }}
                 >
-                  <span className="event-contact-phone-icon" aria-hidden="true">📞</span>
+                  <span aria-hidden="true" style={{ fontSize: "1.15rem", flex: "0 0 auto" }}>📞</span>
                   <span>
                     <strong>{contact.name}:</strong> {contact.phone}
                   </span>

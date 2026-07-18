@@ -1,27 +1,18 @@
-BẢN V14 - THÔNG TIN BUỔI LỄ 2 CỘT
+BẢN V15
 
-Thay 2 file:
-1. src/i18n.js
-2. src/components/EventDetails.js
+Chỉ cần thay 1 file:
+- src/components/EventDetails.js
 
-Sau đó mở:
-src/styles/global.css
-
-và dán toàn bộ nội dung file:
-src/styles/v14-event-two-columns.css
-
-xuống CUỐI file global.css.
-
-Kết quả:
-- Section THÔNG TIN BUỔI LỄ chia làm 2 cột.
-- Cột trái giữ nguyên:
-  + thời gian 10:30 - 12:00
-  + ngày 30/07/2026
+Bản này sửa lại section THÔNG TIN BUỔI LỄ theo đúng ý:
+- chia 2 cột giống phần ĐỊA ĐIỂM
+- cột trái giữ nguyên:
+  + thời gian
+  + ngày
   + nút Thêm vào Google Calendar
-- Cột phải thêm:
-  Khi đến nơi, bạn vui lòng liên hệ để được hướng dẫn:
-  📞 Thuỷ Thương: 0707 250 103
-  📞 Vy: 0794 334 309
-- Nhấn vào số điện thoại trên điện thoại sẽ mở ứng dụng gọi điện.
-- Bản tiếng Anh cũng được cập nhật tương ứng.
-- Trên màn hình nhỏ sẽ tự chuyển từ 2 cột thành 1 cột.
+- cột phải nằm BÊN PHẢI:
+  + Khi đến nơi, bạn vui lòng liên hệ để được hướng dẫn:
+  + 📞 Thuỷ Thương: 0707 250 103
+  + 📞 Vy: 0794 334 309
+
+Mình dùng trực tiếp class details-grid có sẵn trong global.css,
+nên không cần dán thêm CSS patch nữa.
