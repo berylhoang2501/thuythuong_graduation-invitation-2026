@@ -1,14 +1,27 @@
-BẢN V13
+BẢN V14 - THÔNG TIN BUỔI LỄ 2 CỘT
 
-Chỉ cần thay 2 file:
-1. src/components/GallerySection.js
-2. src/components/InvitationMessage.js
+Thay 2 file:
+1. src/i18n.js
+2. src/components/EventDetails.js
 
-Thay đổi:
-- Bỏ dòng "KỶ NIỆM TỐT NGHIỆP" phía trên "Khoảnh khắc tốt nghiệp".
-- Dòng:
-  "Sự hiện diện của bạn sẽ làm cho ngày đặc biệt này trở nên trọn vẹn và ý nghĩa hơn. Thương rất mong được gặp bạn tại buổi lễ."
-  được hiển thị cùng kích cỡ với dòng:
-  "Sau một hành trình học tập với nhiều kỷ niệm, Thương rất vui được chia sẻ khoảnh khắc tốt nghiệp cùng gia đình, bạn bè và những người thân yêu."
+Sau đó mở:
+src/styles/global.css
 
-Không cần sửa global.css.
+và dán toàn bộ nội dung file:
+src/styles/v14-event-two-columns.css
+
+xuống CUỐI file global.css.
+
+Kết quả:
+- Section THÔNG TIN BUỔI LỄ chia làm 2 cột.
+- Cột trái giữ nguyên:
+  + thời gian 10:30 - 12:00
+  + ngày 30/07/2026
+  + nút Thêm vào Google Calendar
+- Cột phải thêm:
+  Khi đến nơi, bạn vui lòng liên hệ để được hướng dẫn:
+  📞 Thuỷ Thương: 0707 250 103
+  📞 Vy: 0794 334 309
+- Nhấn vào số điện thoại trên điện thoại sẽ mở ứng dụng gọi điện.
+- Bản tiếng Anh cũng được cập nhật tương ứng.
+- Trên màn hình nhỏ sẽ tự chuyển từ 2 cột thành 1 cột.

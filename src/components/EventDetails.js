@@ -20,19 +20,48 @@ export default function EventDetails() {
         <p className="eyebrow">{t.event.eyebrow}</p>
         <h2>{t.event.title}</h2>
 
-        <div className="details-grid details-grid--single">
-          <article className="detail-card">
-            <span className="detail-card__icon" aria-hidden="true">◷</span>
-            <h3>{t.event.timeHeading}</h3>
-            <p><strong>{t.event.time}</strong></p>
-            <p>{t.event.date}</p>
-          </article>
-        </div>
+        <div className="event-layout">
+          {/* Cột trái: giữ nguyên nội dung thời gian hiện có */}
+          <div className="event-left">
+            <article className="detail-card event-time-card">
+              <span className="detail-card__icon" aria-hidden="true">◷</span>
+              <h3>{t.event.timeHeading}</h3>
+              <p><strong>{t.event.time}</strong></p>
+              <p>{t.event.date}</p>
+            </article>
 
-        <div className="actions">
-          <a className="button" href={calendarUrl} target="_blank" rel="noreferrer">
-            {t.event.calendar}
-          </a>
+            <div className="actions">
+              <a
+                className="button"
+                href={calendarUrl}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {t.event.calendar}
+              </a>
+            </div>
+          </div>
+
+          {/* Cột phải: thông tin liên hệ khi đến nơi */}
+          <aside className="event-contact-card">
+            <div className="event-contact-icon" aria-hidden="true">☎</div>
+            <h3>{t.event.contactHeading}</h3>
+
+            <div className="event-contact-list">
+              {t.event.contacts.map((contact) => (
+                <a
+                  className="event-contact-item"
+                  href={`tel:${contact.phone.replace(/\s/g, "")}`}
+                  key={contact.phone}
+                >
+                  <span className="event-contact-phone-icon" aria-hidden="true">📞</span>
+                  <span>
+                    <strong>{contact.name}:</strong> {contact.phone}
+                  </span>
+                </a>
+              ))}
+            </div>
+          </aside>
         </div>
       </div>
     </section>

@@ -1,0 +1,98 @@
+/* V14 - Section THÔNG TIN BUỔI LỄ chia 2 cột */
+
+/* Dán toàn bộ phần này xuống CUỐI src/styles/global.css */
+
+.event-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.8fr);
+  gap: 28px;
+  align-items: stretch;
+  max-width: 980px;
+  margin: 38px auto 0;
+}
+
+.event-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.event-time-card {
+  flex: 1;
+  margin: 0;
+}
+
+.event-contact-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 34px 30px;
+  border: 1px solid rgba(20, 33, 61, 0.15);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.5);
+  color: #14213d;
+  text-align: left;
+}
+
+.event-contact-icon {
+  margin-bottom: 14px;
+  color: #9b6b17;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.event-contact-card h3 {
+  margin: 0 0 24px;
+  font-family: Arial, sans-serif;
+  font-size: 1.08rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.event-contact-list {
+  display: grid;
+  gap: 14px;
+}
+
+.event-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  border: 1px solid rgba(20, 33, 61, 0.1);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.66);
+  color: #14213d;
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.event-contact-item:hover {
+  transform: translateY(-2px);
+  border-color: rgba(155, 107, 23, 0.45);
+  box-shadow: 0 10px 26px rgba(20, 33, 61, 0.08);
+}
+
+.event-contact-phone-icon {
+  flex: 0 0 auto;
+  font-size: 1.15rem;
+}
+
+.event-left .actions {
+  margin-top: 10px;
+}
+
+@media (max-width: 800px) {
+  .event-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .event-contact-card {
+    text-align: center;
+  }
+
+  .event-contact-item {
+    justify-content: center;
+  }
+}

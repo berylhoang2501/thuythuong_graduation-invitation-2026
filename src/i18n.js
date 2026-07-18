@@ -30,6 +30,17 @@ export const translations = {
       calendarTitle: "Lễ Tốt Nghiệp 2026 - Hoàng Ngọc Thủy Thương",
       calendarDetails:
         "Tham dự Lễ Tốt Nghiệp Năm 2026 của Hoàng Ngọc Thủy Thương.",
+      contactHeading: "Khi đến nơi, bạn vui lòng liên hệ để được hướng dẫn:",
+      contacts: [
+        {
+          name: "Thuỷ Thương",
+          phone: "0707 250 103",
+        },
+        {
+          name: "Vy",
+          phone: "0794 334 309",
+        },
+      ],
     },
     location: {
       eyebrow: "ĐỊA ĐIỂM",
@@ -122,6 +133,17 @@ export const translations = {
       calendarTitle: "Graduation Ceremony 2026 - Hoàng Ngọc Thủy Thương",
       calendarDetails:
         "Join Hoàng Ngọc Thủy Thương's Graduation Ceremony 2026.",
+      contactHeading: "When you arrive, please contact us for assistance:",
+      contacts: [
+        {
+          name: "Thuỷ Thương",
+          phone: "0707 250 103",
+        },
+        {
+          name: "Vy",
+          phone: "0794 334 309",
+        },
+      ],
     },
     location: {
       eyebrow: "VENUE",
