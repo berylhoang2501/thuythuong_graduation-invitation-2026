@@ -8,8 +8,14 @@ export default function InvitationMessage() {
     <section className="section">
       <div className="container container--narrow">
         <h2>{t.message.title}</h2>
-        <p className="lead">{t.message.lead}</p>
-        <p>{t.message.body}</p>
+
+        <p className="lead">
+          {t.message.lead}
+        </p>
+
+        <p className="lead">
+          {t.message.body}
+        </p>
       </div>
     </section>
   );

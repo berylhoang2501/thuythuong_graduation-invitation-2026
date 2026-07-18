@@ -1,26 +1,14 @@
-BẢN V12 - THAY FILE TRỰC TIẾP, KHÔNG DÁN CSS CHỒNG LÊN NỮA
+BẢN V13
 
-Lý do V11 nhìn gần như cũ:
-Trong global.css của bạn đang có nhiều patch V6, V9, V10, V11 cùng ghi đè .hero__eyebrow.
-Vì vậy CSS cũ vẫn có thể thắng tùy thứ tự.
+Chỉ cần thay 2 file:
+1. src/components/GallerySection.js
+2. src/components/InvitationMessage.js
 
-V12 xử lý triệt để:
-1. Đổi class "THIỆP MỜI" từ hero__eyebrow thành hero__invite-label.
-   -> CSS cũ không thể ghi đè nữa.
-2. Bỏ hoàn toàn nền viên thuốc, viền, blur của "THIỆP MỜI".
-3. Tăng chữ "THIỆP MỜI" lên lớn hơn và cùng layer với tiêu đề.
-4. Tăng kích thước:
-   THÔNG TIN BUỔI LỄ
-   ĐỊA ĐIỂM
-   ĐẾM NGƯỢC
-   KỶ NIỆM TỐT NGHIỆP
-   LỜI CẢM ƠN
-5. Khôi phục dòng "KỶ NIỆM TỐT NGHIỆP" theo yêu cầu mới nhất.
-6. Giữ nguyên layout ĐỊA ĐIỂM 2 cột và bản đồ.
+Thay đổi:
+- Bỏ dòng "KỶ NIỆM TỐT NGHIỆP" phía trên "Khoảnh khắc tốt nghiệp".
+- Dòng:
+  "Sự hiện diện của bạn sẽ làm cho ngày đặc biệt này trở nên trọn vẹn và ý nghĩa hơn. Thương rất mong được gặp bạn tại buổi lễ."
+  được hiển thị cùng kích cỡ với dòng:
+  "Sau một hành trình học tập với nhiều kỷ niệm, Thương rất vui được chia sẻ khoảnh khắc tốt nghiệp cùng gia đình, bạn bè và những người thân yêu."
 
-HÃY THAY HẲN 3 FILE:
-- src/components/InvitationHero.js
-- src/components/GallerySection.js
-- src/styles/global.css
-
-Không dán thêm patch CSS cũ nữa.
+Không cần sửa global.css.
