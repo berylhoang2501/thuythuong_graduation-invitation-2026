@@ -1,0 +1,22 @@
+BẢN V25 - SỬA ĐÚNG NHƯ ẢNH BẠN YÊU CẦU
+
+1. THAY file:
+   src/components/EventDetails.js
+
+2. Mở:
+   src/styles/global.css
+
+   và dán toàn bộ nội dung file:
+   src/styles/v25-event-equal-cards.css
+
+   xuống CUỐI file global.css.
+
+KẾT QUẢ:
+- Khung trái và khung phải dùng chính xác cùng màu nền.
+- Hai khung có cùng chiều cao và cùng kích thước.
+- Nút "Thêm vào Google Calendar" nằm hoàn toàn bên trong khung trái.
+- Cột phải giữ nguyên hai số điện thoại.
+- Desktop: 2 cột cạnh nhau.
+- Mobile: tự xếp dọc.
+
+V25 dùng class riêng hoàn toàn để CSS cũ không kéo nút Calendar ra ngoài nữa.
