@@ -1,0 +1,7 @@
+1. Upload package.json vào thư mục gốc repo và chọn Replace nếu GitHub hỏi.
+2. Upload gatsby-config.js vào thư mục gốc repo và thay file cũ.
+3. Upload .github/workflows/gatsby.yml và thay workflow cũ.
+4. XÓA file package-lock.json cũ khỏi repo (mở file trên GitHub > Delete file > Commit changes).
+5. Commit vào branch main. GitHub Actions sẽ tự chạy lại.
+
+Lưu ý: warning actions/configure-pages@v5 về Node.js 20 không phải lỗi làm build fail. Lỗi hiện tại là xung đột Gatsby 5 với React cũ. Bộ file này dùng React 18.3.1.
