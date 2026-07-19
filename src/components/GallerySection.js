@@ -15,8 +15,6 @@ export default function GallerySection() {
   return (
     <section className="section section--gallery">
       <div className="container">
-        <h2>{t.gallery.title}</h2>
-
         <div className="gallery">
           {photos.map((file, index) => (
             <figure className="gallery__item" key={file}>
