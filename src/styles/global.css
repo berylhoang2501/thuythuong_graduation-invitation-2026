@@ -630,3 +630,19 @@ h2 {
     padding: 12px 16px;
   }
 }
+
+/* V29 - Dá»œI NĂT CHUYá»‚N NGĂ”N NGá»® SANG BĂN PHáº¢I */
+
+.language-toggle {
+  left: auto !important;
+  right: 18px !important;
+  bottom: 18px !important;
+}
+
+@media (max-width: 650px) {
+  .language-toggle {
+    left: auto !important;
+    right: 12px !important;
+    bottom: 12px !important;
+  }
+}
